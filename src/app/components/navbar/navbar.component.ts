@@ -11,8 +11,12 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    const fixedNavbarBuffer: HTMLElement = $('.fixed-navbar-buffer');
     const navbarHeight: number = $('.navbar').outerHeight();
-    $('.fixed-navbar-buffer').height(navbarHeight);
+
+    if ($(fixedNavbarBuffer).offset().top === 0) {
+      $(fixedNavbarBuffer).height(navbarHeight);
+    }
   }
 
 }
