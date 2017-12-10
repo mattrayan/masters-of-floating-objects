@@ -16,6 +16,7 @@ export class NavbarComponent implements OnInit {
 
     if ($(fixedNavbarBuffer).offset().top === 0) {
       $(fixedNavbarBuffer).height(navbarHeight);
+      $(fixedNavbarBuffer).css('background-color', '#000000');
     }
   }
 
