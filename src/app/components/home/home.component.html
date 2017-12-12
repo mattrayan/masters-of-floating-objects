@@ -3,15 +3,16 @@
 
   <div class="container-fluid">
 
-    <div class="content-block white">
-      <div class="content-title margin-bottom-15">News</div>
+    <div class="content-block">
+      <div class="content-title margin-bottom-15">Latest News</div>
 
       <div class="content-body">
-        <div class="card" *ngFor="let item of newsItems">
+        <div class="card text-center" *ngFor="let item of newsItems">
           <img class="card-img-top" src="{{ item.image }}" />
           <div class="card-block">
-            <h4 class="card-title">{{ item.title }}</h4>
-            <p class="card-text">{{ item.summary }}</p>
+            <h5 class="card-title font-weight-300">{{ item.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted font-weight-300">{{ item.published }}</h6>
+            <p class="card-text font-weight-300">{{ item.summary }}</p>
           </div>
         </div>
       </div>
