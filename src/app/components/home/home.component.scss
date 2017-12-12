@@ -7,6 +7,23 @@
     background-repeat: no-repeat;
     background-position: left top;
     background-size: cover;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    .btn-action {
+      margin-right: 2rem;
+    }
+
+    @media (max-width: 575px) {
+      justify-content: space-around;
+
+      .btn-action {
+        margin-right: 0px;
+      }
+    }
   }
 
   .content-block {

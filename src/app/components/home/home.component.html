@@ -1,5 +1,8 @@
 <div class="home-page">
-  <div class="splash"></div>
+  <div class="splash">
+    <button class="btn btn-outline-primary btn-action">Learn More</button>
+    <button class="btn btn-outline-primary btn-action">Join the Team</button>
+  </div>
 
   <div class="container-fluid">
 
@@ -7,7 +10,7 @@
       <div class="content-title margin-bottom-15">Latest News</div>
 
       <div class="content-body">
-        <div class="card text-center" *ngFor="let item of newsItems">
+        <div class="card text-center" *ngFor="let item of newsItems | slice:0:3">
           <img class="card-img-top" src="{{ item.image }}" />
           <div class="card-block">
             <h5 class="card-title font-weight-300">{{ item.title }}</h5>
