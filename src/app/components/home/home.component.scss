@@ -35,14 +35,11 @@
     justify-content: center;
     align-items: center;
 
-    &.white {
-      background-color: #FFFFFF;
-    }
-
     .content-title {
       color: #1DAFEC !important;
       font-weight: 300 !important;
       font-size: 24px !important;
+      letter-spacing: 2px;
     }
 
     .content-body {
@@ -70,6 +67,16 @@
     .card-block {
       flex: 1 1 auto;
       padding: 1.25rem;
+    }
+  }
+
+  .about-text-block {
+    padding-left: 5rem;
+    padding-right: 5rem;
+
+    @media (max-width: 575px) {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
     }
   }
 }
