@@ -3,7 +3,7 @@ import * as $ from 'jquery';
 
 import { NewsService } from '../../services/news.service';
 
-import { NewsItem } from '../../models/news';
+import { NewsItem, Picture } from '../../models/news';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +13,7 @@ import { NewsItem } from '../../models/news';
 export class HomeComponent implements OnInit {
 
   public newsItems: NewsItem[];
+  public pictures: Picture[];
 
   constructor(private news: NewsService) { }
 
@@ -21,11 +22,17 @@ export class HomeComponent implements OnInit {
     $('.splash').height(splashHeight);
 
     this.getNews();
+    this.getPictures();
   }
 
   public getNews(): void {
     this.newsItems = this.news.getNews();
     console.log(this.newsItems);
+  }
+
+  public getPictures(): void {
+    this.pictures = this.news.getPictures();
+    console.log(this.pictures);
   }
 
 }

@@ -58,9 +58,33 @@
     border: none;
     cursor: pointer;
 
+    .card-img-action {
+      display: none;
+      height: 100%;
+    }
+
+    .card-img-top {
+      height: 240px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      &:hover {
+        .card-img-action {
+          display: flex !important;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
     &:hover {
+      .card-img-top {
+        opacity: 0.8;
+      }
       .card-title {
-        color: #1DAFEC;
+        color: #1DAFEC !important;
       }
     }
 

@@ -58,7 +58,7 @@ body {
 	height: 100%;
 }
 
-.btn.btn-action {
+.btn.btn-outline-primary.btn-action {
   text-transform: uppercase;
   font-weight: 400;
   padding: 11px 17px;
@@ -73,5 +73,22 @@ body {
     background-color: transparent;
     color: rgba(255,255,255,0.7);
     border-color: rgba(255,255,255,0.7);
+  }
+}
+
+.btn-primary-action {
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 11px 17px;
+  border-radius: 2px;
+  cursor: pointer;
+  border: none;
+  color: #FFFFFF;
+  font-size: 12px;
+  letter-spacing: 2px;
+  background-color: #1DAFEC;
+
+  &:hover {
+    background-color: #77CEF3;
   }
 }
