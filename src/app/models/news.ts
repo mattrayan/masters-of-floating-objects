@@ -9,6 +9,6 @@ export class NewsItem {
 export class Picture {
   url: string;
   title: string;
-  summary: string;
+  caption: string;
   published: string;
 }
