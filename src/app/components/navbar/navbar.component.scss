@@ -42,6 +42,13 @@ $dropDown       : true;
         &:hover,  &:focus {
           color: $colHighlight;
         }
+
+        @media (min-width: 992px) {
+          &.rank-link {
+            border: 1px solid #1DAFEC;
+            border-radius: 2px;
+          }
+        }
       }
 
       @if $dropDown {
