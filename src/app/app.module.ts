@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 import { NewsService } from './services/news.service';
 
@@ -17,12 +18,13 @@ const routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes)
   ],
   providers: [
     NewsService
