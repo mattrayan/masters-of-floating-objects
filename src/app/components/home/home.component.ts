@@ -39,11 +39,7 @@ export class HomeComponent implements OnInit {
     const navbarBufferHeight: number = $('.fixed-navbar-buffer').height();
     const contentPosition: number = $('#news-block').offset().top - $(window).scrollTop();
 
-    if (navbarBufferHeight > 0) {
-      $('html, body').animate({scrollTop: `+=${contentPosition - navbarBufferHeight}px`}, 500);
-    } else {
-      $('html, body').animate({scrollTop: `+=${contentPosition}px`}, 500);
-    }
+    $('html, body').animate({scrollTop: `+=${contentPosition - navbarBufferHeight}px`}, 500);
   }
 
 }
