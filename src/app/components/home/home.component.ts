@@ -37,12 +37,12 @@ export class HomeComponent implements OnInit {
 
   public scrollToContent(): void {
     const navbarBufferHeight: number = $('.fixed-navbar-buffer').height();
-    const windowHeight: number = $(window).height();
+    const contentPosition: number = $('#news-block').offset().top - $(window).scrollTop();
 
     if (navbarBufferHeight > 0) {
-      $('html, body').animate({scrollTop: `+=${windowHeight - navbarBufferHeight}px`}, 500);
+      $('html, body').animate({scrollTop: `+=${contentPosition - navbarBufferHeight}px`}, 500);
     } else {
-      $('html, body').animate({scrollTop: `+=${windowHeight}px`}, 500);
+      $('html, body').animate({scrollTop: `+=${contentPosition}px`}, 500);
     }
   }
 
