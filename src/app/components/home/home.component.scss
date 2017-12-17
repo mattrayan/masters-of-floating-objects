@@ -9,19 +9,39 @@
     background-size: cover;
 
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 
-    .btn-action {
-      margin-right: 2rem;
+    .fa.fa-chevron-down {
+      cursor: pointer;
     }
 
-    @media (max-width: 575px) {
-      justify-content: space-around;
+    .button-group {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
 
       .btn-action {
-        margin-right: 0px;
+        margin-right: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        justify-content: space-around;
+
+        .btn-action {
+          margin-right: 0px;
+        }
+      }
+    }
+
+    .nav-arrow {
+      margin-bottom: 10px;
+      color: #1DAFEC;
+
+      &:hover {
+        color: #77CEF3;
       }
     }
   }

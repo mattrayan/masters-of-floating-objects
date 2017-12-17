@@ -49,7 +49,11 @@ body {
 }
 
 .font-color-grey {
-  color: #F8F8F8;
+  color: #F8F8F8 !important;
+}
+
+.font-color-blue {
+  color: #1DAFEC !important;
 }
 
 .flex-row {

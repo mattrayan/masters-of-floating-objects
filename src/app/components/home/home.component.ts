@@ -35,4 +35,15 @@ export class HomeComponent implements OnInit {
     console.log(this.pictures);
   }
 
+  public scrollToContent(): void {
+    const navbarBufferHeight: number = $('.fixed-navbar-buffer').height();
+    const windowHeight: number = $(window).height();
+
+    if (navbarBufferHeight > 0) {
+      $('html, body').animate({scrollTop: `+=${windowHeight - navbarBufferHeight}px`}, 500);
+    } else {
+      $('html, body').animate({scrollTop: `+=${windowHeight}px`}, 500);
+    }
+  }
+
 }
