@@ -78,6 +78,11 @@
     margin-bottom: 15px;
     border: none;
     cursor: pointer;
+    border-radius: 2px !important;
+
+    &.gallery {
+      background: transparent;
+    }
 
     .card-img-action {
       display: none;
@@ -89,6 +94,8 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+      border-top-left-radius: 2px !important;
+      border-top-right-radius: 2px !important;
 
       &:hover {
         .card-img-action {
