@@ -18,11 +18,19 @@ export class HomeComponent implements OnInit {
   constructor(private news: NewsService) { }
 
   ngOnInit() {
-    const splashHeight: number = $(window).height() - $('.navbar').outerHeight();
-    $('.splash').height(splashHeight);
+    this.setSplashHeight();
+
+    $(window).resize(() => {
+      this.setSplashHeight();
+    });
 
     this.getNews();
     this.getPictures();
+  }
+
+  public setSplashHeight(): void {
+    const splashHeight: number = $(window).height() - $('.navbar').outerHeight();
+    $('.splash').height(splashHeight);
   }
 
   public getNews(): void {
