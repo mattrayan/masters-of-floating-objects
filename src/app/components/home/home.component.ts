@@ -42,4 +42,11 @@ export class HomeComponent implements OnInit {
     $('html, body').animate({scrollTop: `+=${contentPosition - navbarBufferHeight}px`}, 500);
   }
 
+  public scrollToAbout(): void {
+    const navbarBufferHeight: number = $('.fixed-navbar-buffer').height();
+    const contentPosition: number = $('#about-block').offset().top - $(window).scrollTop();
+
+    $('html, body').animate({scrollTop: `+=${contentPosition - navbarBufferHeight}px`}, 500);
+  }
+
 }
