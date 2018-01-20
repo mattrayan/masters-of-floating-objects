@@ -42,35 +42,6 @@
     }
   }
 
-  .content-block {
-    padding-top: 30px;
-    padding-bottom: 30px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .content-title {
-      color: #1DAFEC !important;
-      font-weight: 300 !important;
-      font-size: 24px !important;
-      letter-spacing: 2px;
-    }
-
-    .content-body {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      &.block {
-        display: block;
-        width: 100%;
-      }
-    }
-  }
-
   .card {
     width: 20rem;
     margin-left: 15px;

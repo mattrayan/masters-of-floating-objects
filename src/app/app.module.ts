@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NewsComponent } from './components/news/news.component';
 
 import { NewsService } from './services/news.service';
 
 const routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'news', component: NewsComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -19,7 +21,8 @@ const routes = [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,

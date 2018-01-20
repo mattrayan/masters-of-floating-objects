@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router }  from '@angular/router';
 import * as $ from 'jquery';
 
 import { NewsService } from '../../services/news.service';
@@ -15,7 +16,10 @@ export class HomeComponent implements OnInit {
   public newsItems: NewsItem[];
   public pictures: Picture[];
 
-  constructor(private news: NewsService) { }
+  constructor(
+    private router: Router,
+    private news: NewsService
+  ) { }
 
   ngOnInit() {
     this.setSplashHeight();
@@ -55,6 +59,10 @@ export class HomeComponent implements OnInit {
     const contentPosition: number = $('#about-block').offset().top - $(window).scrollTop();
 
     $('html, body').animate({scrollTop: `+=${contentPosition - navbarBufferHeight}px`}, 500);
+  }
+
+  public goToNews(): void {
+    this.router.navigate([ 'news' ]);
   }
 
 }
