@@ -82,6 +82,11 @@
 
     &.gallery {
       background: transparent;
+
+      .card-img-top {
+        border-bottom-left-radius: 2px !important;
+        border-bottom-right-radius: 2px !important;
+      }
     }
 
     .card-img-action {
