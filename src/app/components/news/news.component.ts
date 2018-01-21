@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
 
 import { NewsService } from '../../services/news.service';
 
@@ -17,18 +16,7 @@ export class NewsComponent implements OnInit {
   constructor(private news: NewsService) { }
 
   ngOnInit() {
-    this.setContentHeight();
-
-    $(window).resize(() => {
-      this.setContentHeight();
-    });
-
     this.getNews();
-  }
-
-  public setContentHeight(): void {
-    const contentHeight: number = $(window).height() - $('.navbar').outerHeight() - $('.footer').outerHeight();
-    $('.news-page').css('min-height', `${contentHeight}px`);
   }
 
   public getNews(): void {
