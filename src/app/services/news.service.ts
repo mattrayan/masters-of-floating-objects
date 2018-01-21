@@ -53,6 +53,10 @@ export class NewsService {
     ];
   }
 
+  public getNewsItem(id: number): NewsItem {
+    return this.getNews().find(n => n.id === id);
+  }
+
   public getPictures(): Picture[] {
     return [
       {

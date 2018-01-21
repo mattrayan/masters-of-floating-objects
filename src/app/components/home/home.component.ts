@@ -65,4 +65,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate([ 'news' ]);
   }
 
+  public goToNewsItem(id: number): void {
+    this.router.navigate([ 'news', id ]);
+  }
+
 }

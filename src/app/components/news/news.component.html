@@ -3,7 +3,7 @@
     <div class="content-title margin-bottom-15">MOFOs News</div>
 
     <div class="content-body justify-left font-weight-300">
-      <div class="card" *ngFor="let item of newsItems">
+      <div class="card" *ngFor="let item of newsItems" (click)="goToNewsItem(item.id)">
         <div class="card-img-top" [ngStyle]="{ 'background-image': 'url(' + item.image + ')' }">
           <div class="card-img-action">
             <button class="btn-primary-action">Read More</button>

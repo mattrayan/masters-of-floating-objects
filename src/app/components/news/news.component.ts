@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router }  from '@angular/router';
 
 import { NewsService } from '../../services/news.service';
 
@@ -13,7 +14,10 @@ export class NewsComponent implements OnInit {
 
   public newsItems: NewsItem[];
 
-  constructor(private news: NewsService) { }
+  constructor(
+    private router: Router,
+    private news: NewsService
+  ) { }
 
   ngOnInit() {
     this.getNews();
@@ -22,6 +26,10 @@ export class NewsComponent implements OnInit {
   public getNews(): void {
     this.newsItems = this.news.getNews();
     console.log(this.newsItems);
+  }
+
+  public goToNewsItem(id: number): void {
+    this.router.navigate([ 'news', id ]);
   }
 
 }

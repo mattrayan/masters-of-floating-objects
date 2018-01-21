@@ -16,7 +16,7 @@
     <div class="content-title margin-bottom-15">Latest News</div>
 
     <div class="content-body">
-      <div class="card text-center" *ngFor="let item of newsItems | slice:0:3">
+      <div class="card text-center" *ngFor="let item of newsItems | slice:0:3" (click)="goToNewsItem(item.id)">
         <div class="card-img-top" [ngStyle]="{ 'background-image': 'url(' + item.image + ')' }">
           <div class="card-img-action">
             <button class="btn-primary-action">Read More</button>
