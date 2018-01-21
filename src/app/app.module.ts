@@ -11,6 +11,8 @@ import { NewsComponent } from './components/news/news.component';
 
 import { NewsService } from './services/news.service';
 
+import { TruncatePipe } from './pipes/truncate.pipe';
+
 const routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'news', component: NewsComponent, pathMatch: 'full' }
@@ -22,7 +24,8 @@ const routes = [
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    NewsComponent
+    NewsComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,

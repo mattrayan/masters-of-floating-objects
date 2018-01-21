@@ -1,4 +1,5 @@
 export class NewsItem {
+  id: number;
   image: string;
   title: string;
   published: string;

@@ -1,0 +1,23 @@
+.content-body {
+  padding-left: 5rem;
+  padding-right: 5rem;
+
+  @media (max-width: 575px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .news-item {
+    &:not(:last-of-type) {
+      margin-bottom: 50px;
+    }
+
+    .img-wrapper {
+      height: 240px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 2px;
+    }
+  }
+}

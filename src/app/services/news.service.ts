@@ -11,6 +11,7 @@ export class NewsService {
   public getNews(): NewsItem[] {
     return [
       {
+        id: 1,
         image: '/assets/images/news_preview_temp_1.jpg',
         title: 'Title 1',
         published: 'Jan 1, 2018',
@@ -18,6 +19,7 @@ export class NewsService {
         full: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a elit in odio volutpat convallis facilisis eget nisi. Donec non quam risus. Vestibulum sit amet dolor urna. Aenean porta vehicula imperdiet. Aliquam rhoncus orci vel dui tristique placerat. Etiam tincidunt egestas vehicula. In hac habitasse platea dictumst. Maecenas sit amet dolor commodo, tempus velit et, feugiat turpis. Suspendisse sed laoreet eros, non vehicula quam. Vestibulum finibus sem ut quam molestie eleifend. Mauris volutpat, eros vitae lobortis ultrices, ex nunc vulputate velit, ut auctor libero magna sed erat. Etiam ac posuere metus. Suspendisse malesuada turpis et nunc aliquet, at sodales enim euismod. Aliquam quis nisl velit. Fusce et ex sollicitudin, elementum ante non, rhoncus nunc. Curabitur at urna et lectus efficitur sagittis nec et mi.'
       },
       {
+        id: 2,
         image: '/assets/images/news_preview_temp_2.jpg',
         title: 'Title 2',
         published: 'Jan 2, 2018',
@@ -25,11 +27,28 @@ export class NewsService {
         full: 'Cras vitae nisi id augue varius luctus nec id ante. Duis venenatis commodo feugiat. Nam quis cursus nibh, a commodo lectus. Aliquam erat volutpat. Praesent nibh felis, ornare et metus nec, rhoncus mattis leo. Cras finibus mi sed rhoncus tempor. Aenean feugiat blandit felis a vehicula. Sed bibendum tempus accumsan.'
       },
       {
+        id: 3,
         image: '/assets/images/news_preview_temp_3.jpg',
         title: 'Title 3',
         published: 'Jan 3, 2018',
         summary: 'Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent consequat ut erat in sollicitudin. Vestibulum dictum, justo at.',
         full: 'Maecenas id egestas erat. Mauris luctus cursus massa vitae ultrices. Nullam quis dolor vulputate, tincidunt dolor vel, dapibus ipsum. Donec rhoncus orci vel risus egestas, laoreet efficitur lacus semper. Pellentesque tincidunt egestas tincidunt. Nullam lobortis placerat porta. Vivamus interdum ante nec lacinia facilisis. Fusce quis leo a felis laoreet ultrices. Morbi ornare enim a dui accumsan maximus. Donec rutrum sit amet massa eu sagittis. Phasellus tincidunt ultricies sollicitudin. Sed sem quam, interdum quis est vel, rutrum scelerisque urna. Donec vel viverra elit. Nullam imperdiet faucibus ligula sed pellentesque.'
+      },
+      {
+        id: 4,
+        image: '/assets/images/news_preview_temp_4.jpg',
+        title: 'Title 4',
+        published: 'Jan 4, 2018',
+        summary: 'Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent consequat ut erat in sollicitudin. Vestibulum dictum, justo at.',
+        full: 'Donec sed quam sit amet libero tempor semper a accumsan sapien. Vestibulum ut risus ut enim ullamcorper tincidunt. Maecenas bibendum auctor turpis in porttitor. Donec tristique, turpis et elementum congue, elit nisl consequat mi, sed dictum arcu urna sed lorem. Duis porta elementum justo quis ullamcorper. Mauris massa velit, dictum sed nibh eget, lacinia efficitur ex. Nulla ullamcorper dignissim lacinia. Vivamus accumsan varius iaculis. Suspendisse varius fermentum neque, eu commodo nulla luctus eu. Sed ligula quam, tempus ut nisi non, tempus vestibulum ante.'
+      },
+      {
+        id: 5,
+        image: '/assets/images/news_preview_temp_5.jpg',
+        title: 'Title 5',
+        published: 'Jan 5, 2018',
+        summary: 'Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent consequat ut erat in sollicitudin. Vestibulum dictum, justo at.',
+        full: 'Donec in diam ipsum. Aenean sodales velit id orci molestie maximus. Nulla nec nunc vulputate, gravida enim in, volutpat arcu. Praesent at suscipit turpis, nec dignissim felis. Mauris convallis sapien vel felis lobortis, sit amet interdum enim iaculis. Curabitur ullamcorper sapien et ligula elementum aliquet sed id libero. Integer et varius erat. Praesent ac dictum libero.'
       }
     ];
   }

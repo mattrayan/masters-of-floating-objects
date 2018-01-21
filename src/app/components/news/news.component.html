@@ -2,8 +2,19 @@
   <div class="container-fluid content-block">
     <div class="content-title margin-bottom-15">MOFOs News</div>
 
-    <div class="content-body justify-left">
-      Hello
+    <div class="content-body justify-left font-weight-300">
+      <div class="card" *ngFor="let item of newsItems">
+        <div class="card-img-top" [ngStyle]="{ 'background-image': 'url(' + item.image + ')' }">
+          <div class="card-img-action">
+            <button class="btn-primary-action">Read More</button>
+          </div>
+        </div>
+        <div class="card-block">
+          <h5 class="card-title font-weight-300 font-size-18">{{ item.title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted font-weight-300 font-size-14">{{ item.published }}</h6>
+          <p class="card-text font-weight-300 font-size-14">{{ item.full | truncate:280 }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
