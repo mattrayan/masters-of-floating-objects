@@ -17,6 +17,7 @@ $dropDown       : true;
 
   .navbar-brand {
     color: $colDefault;
+    cursor: pointer;
 
     &:hover, &:focus {
       color: $colHighlight;
@@ -33,11 +34,12 @@ $dropDown       : true;
 
   .navbar-nav {
     > li {
-      > a {
+      > a, span {
         color: $colDefault;
         padding-left: 20px;
         padding-right: 20px;
         font-weight: 300;
+        cursor: pointer;
 
         &:hover,  &:focus {
           color: $colHighlight;
@@ -49,7 +51,7 @@ $dropDown       : true;
           background-color: $bgDefault;
 
           > li {
-            > a {
+            > a, span {
               color: $colDefault;
 
               &:hover,  &:focus {

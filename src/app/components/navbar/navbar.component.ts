@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router }  from '@angular/router';
 import * as $ from 'jquery';
 
 @Component({
@@ -8,7 +9,7 @@ import * as $ from 'jquery';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     const fixedNavbarBuffer: HTMLElement = $('.fixed-navbar-buffer');
@@ -18,6 +19,14 @@ export class NavbarComponent implements OnInit {
       $(fixedNavbarBuffer).height(navbarHeight);
       $(fixedNavbarBuffer).css('background-color', '#000000');
     }
+  }
+
+  public goToHome(): void {
+    this.router.navigate([ '' ]);
+  }
+
+  public goToNews(): void {
+    this.router.navigate([ 'news' ]);
   }
 
 }

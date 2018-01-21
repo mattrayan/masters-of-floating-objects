@@ -1,7 +1,7 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">
+  <span class="navbar-brand" (click)="goToHome()">
     <img src="/assets/images/logo.jpg" class="navbar-brand-image" alt="">
-  </a>
+  </span>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -10,19 +10,19 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
+        <span class="nav-link" (click)="goToHome()">Home</span>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/news">News</a>
+        <span class="nav-link" (click)="goToNews()">News</span>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Results</a>
+        <span class="nav-link" href="#">Results</span>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Team</a>
+        <span class="nav-link" href="#">Team</span>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Join</a>
+        <span class="nav-link" href="#">Join</span>
       </li>
     </ul>
     <ul class="navbar-nav">

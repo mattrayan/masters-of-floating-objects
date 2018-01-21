@@ -12,7 +12,7 @@ export class TruncatePipe implements PipeTransform {
     if (!value || !value.length) {
       return '';
     } else {
-      return value.length > limitLength ? value.substring(0, limitLength) + trailString : value;
+      return value.length > limitLength ? value.substring(0, limitLength).trim() + trailString : value;
     }
   }
 
