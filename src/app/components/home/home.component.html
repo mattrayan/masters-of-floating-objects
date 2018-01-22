@@ -16,16 +16,16 @@
     <div class="content-title margin-bottom-15">Latest News</div>
 
     <div class="content-body">
-      <div class="card text-center" *ngFor="let item of newsItems | slice:0:3" (click)="goToNewsItem(item.id)">
+      <div class="card" *ngFor="let item of newsItems | slice:0:3" (click)="goToNewsItem(item.id)">
         <div class="card-img-top" [ngStyle]="{ 'background-image': 'url(' + item.image + ')' }">
           <div class="card-img-action">
             <button class="btn-primary-action">Read More</button>
           </div>
         </div>
         <div class="card-block">
-          <h5 class="card-title font-weight-300 font-size-18">{{ item.title }}</h5>
           <h6 class="card-subtitle mb-2 text-muted font-weight-300 font-size-14">{{ item.published }}</h6>
-          <p class="card-text font-weight-300 font-size-14">{{ item.summary }}</p>
+          <h5 class="card-title font-weight-300 font-size-18">{{ item.title }}</h5>
+          <p class="card-text font-weight-300 font-size-14">{{ item.full | truncate:280 }}</p>
         </div>
       </div>
     </div>
