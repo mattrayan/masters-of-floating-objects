@@ -64,6 +64,14 @@ body {
   color: #1DAFEC !important;
 }
 
+.border-radius-2 {
+  border-radius: 2px !important;
+}
+
+.width-100 {
+  width: 100% !important;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -100,6 +108,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  &.align-left {
+    align-items: flex-start;
+  }
 
   .content-title {
     color: #1DAFEC !important;

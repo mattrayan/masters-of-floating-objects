@@ -1,9 +1,9 @@
 <div class="content-page-container">
-  <div class="container-fluid content-block">
-    <div class="content-title margin-bottom-15">Title</div>
+  <div class="container-fluid content-block align-left font-weight-300">
+    <img class="width-100 border-radius-2 margin-bottom-15" src="{{ item.image }}" alt="{{ item.summary }}" />
+    <div class="content-title">{{ item.title }}</div>
+    <div class="content-subtitle text-muted font-size-14 margin-bottom-15">{{ item.published }}</div>
 
-    <div class="content-body justify-left font-weight-300">
-
-    </div>
+    <div class="content-body justify-left" [innerHTML]="item.full"></div>
   </div>
 </div>
