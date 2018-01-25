@@ -51,4 +51,34 @@
       padding-right: 1.25rem;
     }
   }
+
+  .splash-body-nav {
+    .col-md-4 {
+      height: 375px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      padding: 0;
+      cursor: pointer;
+
+      .inner-cover {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(220, 220, 220, 0.4);
+        position: relative;
+      }
+    }
+
+    .splash-item-1 {
+      background-image: url("/assets/images/splash_nav_1.jpg");
+    }
+
+    .splash-item-2 {
+      background-image: url("/assets/images/splash_nav_2.jpg");
+    }
+
+    .splash-item-3 {
+      background-image: url("/assets/images/splash_nav_3.jpg");
+    }
+  }
 }

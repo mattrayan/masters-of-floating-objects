@@ -24,6 +24,14 @@ body {
   margin-bottom: 15px !important;
 }
 
+.margin-bottom-30 {
+  margin-bottom: 30px !important;
+}
+
+.margin-bottom-45 {
+  margin-bottom: 45px !important;
+}
+
 .padding-top-15 {
   padding-top: 15px !important;
 }
@@ -101,8 +109,8 @@ body {
 }
 
 .content-block {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 45px;
+  padding-bottom: 45px;
 
   display: flex;
   flex-direction: column;
@@ -114,10 +122,11 @@ body {
   }
 
   .content-title {
-    color: #1DAFEC !important;
+    color: #1DAFEC;
     font-weight: 300 !important;
     font-size: 24px !important;
     letter-spacing: 2px;
+    line-height: 1;
   }
 
   .content-body {
@@ -142,13 +151,14 @@ body {
   width: 20rem;
   margin-left: 15px;
   margin-right: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   border: none;
   cursor: pointer;
   border-radius: 2px !important;
 
   &.gallery {
     background: transparent;
+    margin-bottom: 15px;
 
     .card-img-top {
       border-bottom-left-radius: 2px !important;
@@ -190,7 +200,7 @@ body {
 
   .card-block {
     flex: 1 1 auto;
-    padding: 1.25rem;
+    padding: 15px;
   }
 }
 

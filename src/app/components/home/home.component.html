@@ -13,7 +13,7 @@
   </div>
 
   <div class="container-fluid content-block" id="news-block">
-    <div class="content-title margin-bottom-15">Latest News</div>
+    <div class="content-title margin-bottom-45">Latest News</div>
 
     <div class="content-body">
       <div class="card" *ngFor="let item of newsItems | slice:0:3" (click)="goToNewsItem(item.id)">
@@ -38,7 +38,7 @@
   </div>
 
   <div class="container-fluid content-block background-white" id="about-block">
-    <div class="content-title margin-bottom-15">About</div>
+    <div class="content-title margin-bottom-45">About</div>
 
     <div class="content-body text-center font-weight-300 about-text-block">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet ante volutpat, luctus velit et, viverra nisl. Nulla mattis leo id purus ultrices fringilla. Phasellus in dolor nec urna tempor venenatis. Integer ornare ligula eget fringilla fermentum. Nulla sollicitudin est non arcu pharetra pretium. Mauris ac magna eget libero suscipit bibendum. Duis tellus sapien, vestibulum a accumsan at, elementum sed sem. Vestibulum posuere odio quis justo maximus tempus. Etiam mollis eget sapien nec maximus. Donec vitae augue vel urna tristique vestibulum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse laoreet arcu a eleifend lacinia. Donec volutpat iaculis lectus, non hendrerit tellus finibus id. In hac habitasse platea dictumst. Vivamus risus arcu, ultrices ut luctus at, porttitor sed neque. Cras sed venenatis ante.</p>
@@ -46,11 +46,27 @@
     </div>
   </div>
 
+  <div class="container-fluid">
+    <div class="row splash-body-nav">
+      <div class="col-md-4 splash-item-1">
+        <div class="inner-cover"></div>
+      </div>
+
+      <div class="col-md-4 splash-item-2">
+        <div class="inner-cover"></div>
+      </div>
+
+      <div class="col-md-4 splash-item-3">
+        <div class="inner-cover"></div>
+      </div>
+    </div>
+  </div>
+
   <div class="container-fluid content-block">
-    <div class="content-title margin-bottom-15">Gallery</div>
+    <div class="content-title margin-bottom-45">Gallery</div>
 
     <div class="content-body">
-      <div class="card gallery text-center" *ngFor="let picture of pictures | slice:0:9">
+      <div class="card gallery text-center" *ngFor="let picture of pictures | slice:0:6">
         <div class="card-img-top" [ngStyle]="{ 'background-image': 'url(' + picture.url + ')' }">
           <div class="card-img-action">
             <button class="btn-primary-action">View</button>
@@ -70,7 +86,7 @@
   </div>
 
   <div class="container-fluid content-block background-white">
-    <div class="content-title margin-bottom-15">Contact Us</div>
+    <div class="content-title margin-bottom-45">Contact Us</div>
 
     <div class="content-body block">
       <div class="row margin-bottom-15">
@@ -95,7 +111,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row margin-top-15">
       <div class="col-md-12">
         <div class="btn-primary-action">Submit</div>
       </div>
