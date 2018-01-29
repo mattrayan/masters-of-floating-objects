@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 import { NewsItem, Picture } from '../models/news';
 
 @Injectable()
 export class NewsService {
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   public getNews(): NewsItem[] {
     return [
