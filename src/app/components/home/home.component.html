@@ -16,16 +16,15 @@
     <div class="content-title margin-bottom-45">Latest News</div>
 
     <div class="content-body">
-      <div class="card wide" *ngFor="let item of newsItems | slice:0:3" (click)="goToNewsItem(item.id)">
-        <div class="card-img-top" [ngStyle]="{ 'background-image': 'url(' + item.image + ')' }">
-          <div class="card-img-action">
-            <button class="btn-primary-action">Read More</button>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let item of newsItems | slice:0:3">
+          <div class="card" (click)="goToNewsItem(item.id)">
+            <div class="card-img-top" [ngStyle]="{ 'background-image': 'url(' + item.image + ')' }"></div>
+            <div class="card-block">
+              <h5 class="card-title text-center font-weight-300 font-size-18">{{ item.title }}</h5>
+              <p class="card-text font-weight-300 font-size-14">{{ item.full | truncate:280 }}</p>
+            </div>
           </div>
-        </div>
-        <div class="card-block">
-          <h6 class="card-subtitle mb-2 text-muted font-weight-300 font-size-14">{{ item.published }}</h6>
-          <h5 class="card-title font-weight-300 font-size-18">{{ item.title }}</h5>
-          <p class="card-text font-weight-300 font-size-14">{{ item.full | truncate:280 }}</p>
         </div>
       </div>
     </div>
@@ -37,7 +36,7 @@
     </div>
   </div>
 
-  <div class="container-fluid content-block background-white" id="about-block">
+  <div class="container-fluid content-block background-grey" id="about-block">
     <div class="content-title margin-bottom-45">About</div>
 
     <div class="content-body text-center font-weight-300 about-text-block">
@@ -48,44 +47,11 @@
 
   <div class="container-fluid">
     <div class="row splash-body-nav">
-      <div class="col-md-4 splash-item-1">
-        <div class="inner-cover"></div>
-      </div>
-
-      <div class="col-md-4 splash-item-2">
-        <div class="inner-cover"></div>
-      </div>
-
-      <div class="col-md-4 splash-item-3">
-        <div class="inner-cover"></div>
-      </div>
+      <div class="col-md-4" *ngFor="let picture of pictures | slice:0:6" [ngStyle]="{ 'background-image': 'url(' + picture.url + ')' }"></div>
     </div>
   </div>
 
   <div class="container-fluid content-block">
-    <div class="content-title margin-bottom-45">Gallery</div>
-
-    <div class="content-body">
-      <div class="card gallery text-center" *ngFor="let picture of pictures | slice:0:6">
-        <div class="card-img-top" [ngStyle]="{ 'background-image': 'url(' + picture.url + ')' }">
-          <div class="card-img-action">
-            <button class="btn-primary-action">View</button>
-          </div>
-        </div>
-        <div class="card-block">
-          <h6 class="card-title mb-2 font-weight-300 font-size-14">{{ picture.title }}</h6>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="btn-primary-action">See More</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid content-block background-white">
     <div class="content-title margin-bottom-45">Contact Us</div>
 
     <div class="content-body block">
