@@ -203,8 +203,10 @@ body {
     padding-top: 15px;
     padding-bottom: 15px;
 
-    .card-title:hover {
-      color: #1DAFEC !important;
+    &:hover {
+      .card-title {
+        color: #1DAFEC !important;
+      }
     }
   }
 }
