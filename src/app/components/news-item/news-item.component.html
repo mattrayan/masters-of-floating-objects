@@ -1,8 +1,13 @@
 <div class="content-page-container">
-  <div class="container-fluid content-block align-left font-weight-300 padding-top-30">
-    <img class="width-100 border-radius-2 margin-bottom-30" src="{{ item.image }}" alt="{{ item.summary }}" />
-    <div class="content-title">{{ item.title }}</div>
-    <div class="content-subtitle text-muted font-size-14 margin-bottom-30">{{ item.published }}</div>
-    <div class="content-body justify-left" [innerHTML]="item.full"></div>
+  <div class="row">
+    <div class="col-md-6 content-block justify-top align-left">
+      <div class="content-title">{{ item.title }}</div>
+      <div class="content-subtitle text-muted font-size-14 margin-bottom-15">{{ item.published }}</div>
+      <div class="content-body justify-left" [innerHTML]="item.full"></div>
+    </div>
+
+    <div class="col-md-6 image-block">
+      <img class="width-100 border-radius-2 margin-bottom-45" src="{{ item.image }}" alt="{{ item.summary }}" />
+    </div>
   </div>
 </div>

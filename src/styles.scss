@@ -121,6 +121,10 @@ body {
     align-items: flex-start;
   }
 
+  &.justify-top {
+    justify-content: flex-start;
+  }
+
   .content-title {
     color: #1DAFEC;
     font-weight: 300 !important;
