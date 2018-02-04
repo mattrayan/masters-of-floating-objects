@@ -66,19 +66,52 @@
         height: 100%;
         background-color: rgba(220, 220, 220, 0.4);
         position: relative;
+        text-transform: uppercase;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          background-color: rgba(220, 220, 220, 0.0);
+        }
+
+        .cover-title, .cover-text {
+          background-color: rgba(220, 220, 220, 0.6);
+          padding-left: 6px;
+          padding-right: 6px;
+          border-radius: 2px;
+        }
+
+        .cover-title {
+          letter-spacing: 2px;
+          font-size: 35px;
+          font-weight: 700;
+          margin-bottom: 10px;
+        }
+
+        .cover-text {
+          letter-spacing: 2px;
+          font-size: 18px;
+          font-weight: 700;
+        }
       }
     }
 
     .splash-item-1 {
       background-image: url("/assets/images/splash_nav_1.jpg");
+      color: #D3FFCE;
     }
 
     .splash-item-2 {
       background-image: url("/assets/images/splash_nav_2.jpg");
+      color: #BAF5F0;
     }
 
     .splash-item-3 {
       background-image: url("/assets/images/splash_nav_3.jpg");
+      color: #FFFFFF;
     }
   }
 }

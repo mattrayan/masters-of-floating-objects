@@ -47,7 +47,26 @@
 
   <div class="container-fluid">
     <div class="row splash-body-nav">
-      <div class="col-md-4" *ngFor="let picture of pictures | slice:0:6" [ngStyle]="{ 'background-image': 'url(' + picture.url + ')' }"></div>
+      <div class="col-md-4 splash-item-1">
+        <div class="inner-cover">
+          <p class="cover-title">Roster</p>
+          <p class="cover-text">Shirtless and Sexy</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 splash-item-2">
+        <div class="inner-cover">
+          <p class="cover-title">A-Division</p>
+          <p class="cover-text">Top Placings and Results</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 splash-item-3">
+        <div class="inner-cover">
+          <p class="cover-title">Alumni</p>
+          <p class="cover-text">15 Years in the Making</p>
+        </div>
+      </div>
     </div>
   </div>
 
