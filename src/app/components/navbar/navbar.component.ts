@@ -21,12 +21,8 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  public goToHome(): void {
-    this.router.navigate([ '' ]);
-  }
-
-  public goToNews(): void {
-    this.router.navigate([ 'news' ]);
+  public goToRoute(route: string): void {
+    this.router.navigate([ route ]);
   }
 
 }

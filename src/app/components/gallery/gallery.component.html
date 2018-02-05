@@ -1,0 +1,18 @@
+<div class="content-page-container">
+  <div class="container-fluid content-block">
+    <div class="content-title margin-bottom-45">Gallery</div>
+
+    <div class="content-body block font-weight-300">
+      <div class="row">
+        <div class="col-md-4" *ngFor="let album of albums">
+          <div class="card" (click)="goToAlbum(album.id)">
+            <div class="card-img-top" [ngStyle]="{ 'background-image': 'url(' + album.cover + ')' }"></div>
+            <div class="card-block">
+              <h5 class="card-title text-center font-weight-300 font-size-18">{{ album.title }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

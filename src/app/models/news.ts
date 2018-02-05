@@ -3,7 +3,6 @@ export class NewsItem {
   image: string;
   title: string;
   published: string;
-  summary: string;
   full: string;
 }
 
@@ -12,4 +11,11 @@ export class Picture {
   title: string;
   caption: string;
   published: string;
+}
+
+export class Album {
+  id: number;
+  url: string;
+  title: string;
+  cover: string;
 }

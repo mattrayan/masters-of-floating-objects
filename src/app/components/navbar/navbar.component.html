@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-  <span class="navbar-brand" (click)="goToHome()">
+  <span class="navbar-brand" (click)="goToRoute('')">
     <img src="/assets/images/logo.jpg" class="navbar-brand-image" alt="">
   </span>
 
@@ -10,16 +10,16 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <span class="nav-link" (click)="goToHome()">Home</span>
+        <span class="nav-link" (click)="goToRoute('')">Home</span>
       </li>
       <li class="nav-item">
-        <span class="nav-link" (click)="goToNews()">News</span>
+        <span class="nav-link" (click)="goToRoute('news')">News</span>
       </li>
       <li class="nav-item">
         <span class="nav-link" href="#">Team</span>
       </li>
       <li class="nav-item">
-        <span class="nav-link" href="#">Gallery</span>
+        <span class="nav-link" (click)="goToRoute('gallery')">Gallery</span>
       </li>
       <li class="nav-item">
         <span class="nav-link" href="#">Join</span>

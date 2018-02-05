@@ -25,7 +25,6 @@ export class NewsComponent implements OnInit {
 
   public getNews(): void {
     this.newsItems = this.news.getNews();
-    console.log(this.newsItems);
   }
 
   public goToNewsItem(id: number): void {
