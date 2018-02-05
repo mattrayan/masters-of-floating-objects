@@ -134,11 +134,15 @@ export class NewsService {
     ]
   }
 
-  public getAlbum(album: Album): Picture[] {
+  public getAlbum(id: number): Album {
+    return this.getAlbums().find(n => n.id === id);
+  }
+
+  public getAlbumPictures(id: number): Picture[] {
     const allPictures: Picture[] = this.getPictures();
-    if (album.id === 1) {
+    if (id === 1) {
       return allPictures.filter((p, index) => index <= 5);
-    } else if (album.id === 2) {
+    } else if (id === 2) {
       return allPictures.filter((p, index) => index > 2);
     } else {
       return allPictures.filter((p, index) => index > 5);

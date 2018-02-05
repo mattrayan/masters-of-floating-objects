@@ -1,0 +1,42 @@
+.content-body {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 15px;
+
+  @media (max-width: 575px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .image-preview-container {
+    height: 240px;
+    margin-bottom: 30px;
+
+    .image-preview {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      border-radius: 2px;
+
+      .inner-cover {
+        display: none;
+        background-color: rgba(0, 0, 0, 0.6);
+        font-size: 14px;
+        height: 100%;
+        width: 100%;
+        color: #FFFFFF;
+        padding: 0 15px 0 15px;
+      }
+
+      &:hover {
+        .inner-cover {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

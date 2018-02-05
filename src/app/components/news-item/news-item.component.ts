@@ -32,7 +32,6 @@ export class NewsItemComponent implements OnInit {
 
   public getNewsItem(id: number): void {
     this.item = this.news.getNewsItem(id);
-    console.log(this.item);
   }
 
 }
