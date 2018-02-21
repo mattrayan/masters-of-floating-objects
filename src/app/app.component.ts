@@ -12,16 +12,18 @@ export class AppComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    $(window).resize(() => {
-      this.setContentHeight();
-    });
-
-    this.router.events
-      .subscribe(event => {
-        if (event instanceof NavigationEnd) {
-          this.setContentHeight();
-        }
+    $(document).ready(() => {
+      $(window).resize(() => {
+        this.setContentHeight();
       });
+
+      this.router.events
+        .subscribe(event => {
+          if (event instanceof NavigationEnd) {
+            this.setContentHeight();
+          }
+        });
+    });
   }
 
   public setContentHeight(): void {

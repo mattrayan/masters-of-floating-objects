@@ -22,14 +22,16 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.setSplashHeight();
-
-    $(window).resize(() => {
+    $(document).ready(() => {
       this.setSplashHeight();
-    });
 
-    this.getNews();
-    this.getPictures();
+      $(window).resize(() => {
+        this.setSplashHeight();
+      });
+
+      this.getNews();
+      this.getPictures();
+    });
   }
 
   public setSplashHeight(): void {
