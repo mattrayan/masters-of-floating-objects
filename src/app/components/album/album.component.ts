@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import * as $ from 'jquery';
 
 import { NewsService } from '../../services/news.service';
 
@@ -14,6 +15,7 @@ export class AlbumComponent implements OnInit {
 
   public album: Album;
   public pictures: Picture[];
+  public activeId: string = '0';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -29,11 +31,43 @@ export class AlbumComponent implements OnInit {
         this.getAlbum(id);
       }
     });
+
+    $(document).ready(() => {
+      this.setCarouselDimensions();
+
+      $(window).resize(() => {
+        this.setCarouselDimensions();
+      });
+    });
+  }
+
+  public setCarouselDimensions(): void {
+    const windowHeight: number = $(window).height();
+    const windowWidth: number = $(window).width();
+
+    const carouselContainer: HTMLElement = $('.carousel-container');
+    $(carouselContainer).height(windowHeight);
+    $(carouselContainer).width(windowWidth);
+
+    const carouselContainerImg: HTMLElement = $('.carousel-container img');
+    $(carouselContainerImg).css('max-height', `${windowHeight}px`);
+    $(carouselContainerImg).css('max-width', `${windowWidth}px`);
   }
 
   public getAlbum(id: number): void {
     this.album = this.news.getAlbum(id);
     this.pictures = this.news.getAlbumPictures(id);
+  }
+
+  public startCarousel(id: number): void {
+    $('.carousel-container').css('display', 'flex');
+    $('.content-page-container').hide();
+    this.activeId = id.toString();
+  }
+
+  public closeCarousel(): void {
+    $('.carousel-container').css('display', 'none');
+    $('.content-page-container').show();
   }
 
 }

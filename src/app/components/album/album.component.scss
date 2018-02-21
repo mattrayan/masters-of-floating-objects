@@ -40,3 +40,49 @@
     }
   }
 }
+
+.carousel-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1111;
+  width: 100%;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+
+  .fa-close {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    color: #FFFFFF;
+    cursor: pointer;
+
+    &:hover {
+      color: #C8C8C8;
+    }
+  }
+
+  /deep/ ngb-carousel {
+    .carousel-control-prev, .carousel-control-next, .carousel-indicators li {
+      cursor: pointer;
+    }
+
+    .carousel-caption {
+      font-size: 14px;
+      display: none;
+    }
+
+    .carousel-inner:hover {
+      .carousel-caption {
+        display: block;
+      }
+    }
+
+    .carousel-container img {
+      max-width: 100%;
+    }
+  }
+}
