@@ -13,8 +13,8 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
-  public goToNews(): void {
-    this.router.navigate([ 'news' ]);
+  public goToRoute(route: string): void {
+    this.router.navigate([ route ]);
   }
 
 }

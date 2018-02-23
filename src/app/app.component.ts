@@ -13,6 +13,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     $(document).ready(() => {
+      this.setContentHeight();
+
       $(window).resize(() => {
         this.setContentHeight();
       });

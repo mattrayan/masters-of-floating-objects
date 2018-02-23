@@ -13,6 +13,7 @@ import { NewsComponent } from './components/news/news.component';
 import { NewsItemComponent } from './components/news-item/news-item.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { AlbumComponent } from './components/album/album.component';
+import { JoinComponent } from './components/join/join.component';
 
 import { NewsService } from './services/news.service';
 
@@ -23,7 +24,8 @@ const routes = [
   { path: 'news', component: NewsComponent, pathMatch: 'full' },
   { path: 'news/:id', component: NewsItemComponent, pathMatch: 'full' },
   { path: 'gallery', component: GalleryComponent, pathMatch: 'full' },
-  { path: 'album/:id', component: AlbumComponent, pathMatch: 'full' }
+  { path: 'album/:id', component: AlbumComponent, pathMatch: 'full' },
+  { path: 'join', component: JoinComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -36,6 +38,7 @@ const routes = [
     NewsItemComponent,
     GalleryComponent,
     AlbumComponent,
+    JoinComponent,
     TruncatePipe
   ],
   imports: [
