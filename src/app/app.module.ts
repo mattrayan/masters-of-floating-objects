@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -17,6 +18,7 @@ import { JoinComponent } from './components/join/join.component';
 
 import { NewsService } from './services/news.service';
 
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
 
 const routes = [
@@ -39,10 +41,12 @@ const routes = [
     GalleryComponent,
     AlbumComponent,
     JoinComponent,
+    CapitalizePipe,
     TruncatePipe
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
     NgbCarouselModule.forRoot()
