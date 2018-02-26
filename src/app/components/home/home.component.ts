@@ -28,10 +28,9 @@ export class HomeComponent implements OnInit {
       $(window).resize(() => {
         this.setSplashHeight();
       });
-
-      this.getNews();
-      this.getPictures();
     });
+
+    this.getNews();
   }
 
   public setSplashHeight(): void {
@@ -42,11 +41,6 @@ export class HomeComponent implements OnInit {
   public getNews(): void {
     this.newsItems = this.news.getNews();
     console.log(this.newsItems);
-  }
-
-  public getPictures(): void {
-    this.pictures = this.news.getPictures();
-    console.log(this.pictures);
   }
 
   public scrollToContent(): void {
