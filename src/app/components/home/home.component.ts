@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
 
   public newsItems: NewsItem[];
   public pictures: Picture[];
+  private teamAge: number = (new Date()).getFullYear() - 2002;
 
   constructor(
     private router: Router,

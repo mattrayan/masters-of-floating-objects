@@ -16,6 +16,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { AlbumComponent } from './components/album/album.component';
 import { JoinComponent } from './components/join/join.component';
 import { TeamComponent } from './components/team/team.component';
+import { TeamProfilesComponent } from './components/team-profiles/team-profiles.component';
 
 import { NewsService } from './services/news.service';
 
@@ -29,7 +30,9 @@ const routes = [
   { path: 'gallery', component: GalleryComponent, pathMatch: 'full' },
   { path: 'album/:id', component: AlbumComponent, pathMatch: 'full' },
   { path: 'join', component: JoinComponent, pathMatch: 'full' },
-  { path: 'team', component: TeamComponent, pathMatch: 'full' }
+  { path: 'team', component: TeamComponent, pathMatch: 'full' },
+  { path: 'team/roster', component: TeamProfilesComponent, pathMatch: 'full' },
+  { path: 'team/alumni', component: TeamProfilesComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -44,8 +47,9 @@ const routes = [
     AlbumComponent,
     JoinComponent,
     TeamComponent,
+    TeamProfilesComponent,
     CapitalizePipe,
-    TruncatePipe
+    TruncatePipe,
   ],
   imports: [
     BrowserModule,

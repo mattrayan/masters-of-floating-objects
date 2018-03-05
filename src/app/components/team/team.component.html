@@ -3,19 +3,19 @@
     <div class="content-title">MOFOs Dragonboat Team</div>
   </div>
 
-  <div class="container-fluid margin-bottom-45">
+  <div class="container-fluid">
     <div class="row splash-body-nav">
-      <div class="col-md-4 splash-item-4">
+      <div class="col-md-4 splash-item-4" (click)="goToRoster()">
         <div class="inner-cover">
           <p class="cover-title">Current Roster</p>
           <p class="cover-text">{{ year }} Line-up</p>
         </div>
       </div>
 
-      <div class="col-md-4 splash-item-5">
+      <div class="col-md-4 splash-item-5" (click)="goToAlumni()">
         <div class="inner-cover">
           <p class="cover-title">Alumni</p>
-          <p class="cover-text">15 Years of Flexing</p>
+          <p class="cover-text">{{ teamAge }} Years of Flexing</p>
         </div>
       </div>
 

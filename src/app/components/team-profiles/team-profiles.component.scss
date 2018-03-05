@@ -1,0 +1,52 @@
+.content-body {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 15px;
+
+  @media (max-width: 575px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .profile-col {
+    max-width: 270px;
+  }
+
+  .profile {
+    height: 310px;
+
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    border-radius: 2px;
+
+    margin-bottom: 30px;
+
+    .profile-overlay {
+      display: none;
+      background: rgba(255, 255, 255, 0.8);
+      height: 100%;
+      width: 100%;
+      border: 3px solid #1DAFEC;
+      border-radius: 2px;
+      padding: 15px;
+
+      .name {
+        color: #1DAFEC;
+        font-weight: 600;
+      }
+
+      .description {
+        .title {
+          font-weight: 500;
+        }
+      }
+    }
+
+    &:hover {
+      .profile-overlay {
+        display: block;
+      }
+    }
+  }
+}

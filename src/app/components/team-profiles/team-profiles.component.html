@@ -1,0 +1,42 @@
+<div class="content-page-container">
+  <div class="container-fluid content-block">
+    <div class="content-title margin-bottom-45"><span *ngIf="category === 'roster'">{{ year }}&nbsp;</span>{{ category | capitalize }}</div>
+
+    <div class="content-body block font-weight-300">
+      <div class="row">
+        <div class="col-md-3 profile-col" *ngFor="let profile of profiles">
+          <div class="profile" [ngStyle]="{ 'background-image': 'url(' + profile.image + ')' }">
+            <div class="profile-overlay">
+              <div class="name margin-bottom-5">
+                {{ profile.name }}
+              </div>
+
+              <div *ngIf="profile.end_year" class="margin-bottom-5">
+                Active {{ profile.start_year }} - {{ profile.end_year }}
+              </div>
+
+              <div *ngIf="!profile.end_year" class="margin-bottom-5">
+                Active since {{ profile.start_year }}
+              </div>
+
+              <div class="description margin-bottom-5">
+                <div class="title">Strength</div>
+                <div class="text">{{ profile.strength }}</div>
+              </div>
+
+              <div class="description margin-bottom-5">
+                <div class="title">Weakness</div>
+                <div class="text">{{ profile.weakness }}</div>
+              </div>
+
+              <div class="description">
+                <div class="title">Description</div>
+                <div class="text">{{ profile.description }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

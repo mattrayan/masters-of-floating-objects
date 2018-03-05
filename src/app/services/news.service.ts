@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { NewsItem, Picture, Album } from '../models/news';
+import { Profile } from '../models/profiles';
 
 @Injectable()
 export class NewsService {
@@ -147,5 +148,123 @@ export class NewsService {
     } else {
       return allPictures.filter((p, index) => index > 5);
     }
+  }
+
+  public getRoster(): Profile[] {
+    return [
+      {
+        name: 'Matt C',
+        image: '/assets/images/matthew_carroll.jpg',
+        start_year: 2002,
+        end_year: null,
+        strength: 'MATLAB',
+        weakness: 'Choosing appropriate roster size',
+        description: 'Team Founder'
+      },
+      {
+        name: 'Sara C',
+        image: '/assets/images/sara_carroll.jpg',
+        start_year: 2002,
+        end_year: null,
+        strength: 'Organization',
+        weakness: 'Meatballs',
+        description: 'Powerhouse'
+      },
+      {
+        name: 'Matt R',
+        image: '/assets/images/matt_rayan.jpg',
+        start_year: 2015,
+        end_year: null,
+        strength: 'His strongest strength is his strength',
+        weakness: 'Touching shoulders',
+        description: 'Man Beast'
+      },
+      {
+        name: 'Brian Lee',
+        image: '/assets/images/brian_lee.jpg',
+        start_year: 2014,
+        end_year: null,
+        strength: 'DDR',
+        weakness: 'Gracefully entering the boat',
+        description: 'Gastronome'
+      },
+      {
+        name: 'Enoch Wong',
+        image: '/assets/images/enoch_wong.jpg',
+        start_year: 2015,
+        end_year: null,
+        strength: 'Stretching',
+        weakness: 'Shirts',
+        description: 'Shredded'
+      },
+      {
+        name: 'Jon Yeung',
+        image: '/assets/images/jon_yeung.jpg',
+        start_year: 2014,
+        end_year: null,
+        strength: 'Appropriate and timely application of Star Trek quotes',
+        weakness: '	Dan tat',
+        description: 'Hot (Like earl grey)'
+      }
+    ];
+  }
+
+  public getAlumni(): Profile[] {
+    return [
+      {
+        name: 'Hamilton L',
+        image: '/assets/images/hamilton_liao.jpg',
+        start_year: 2002,
+        end_year: 2010,
+        strength: 'Ninja Reflexes',
+        weakness: 'Being out of Canada',
+        description: 'Original shirtless Mofo'
+      },
+      {
+        name: 'Alfred P',
+        image: '/assets/images/alfred_poon.jpg',
+        start_year: 2002,
+        end_year: 2010,
+        strength: 'Going buck',
+        weakness: 'Deep fried pork chops',
+        description: 'Likes Poon'
+      },
+      {
+        name: 'Steve X',
+        image: '/assets/images/steve_xu.jpg',
+        start_year: 2006,
+        end_year: 2010,
+        strength: 'Picking up... weights',
+        weakness: 'Egg tarts',
+        description: 'Has 6 biceps on his stomach'
+      },
+      {
+        name: 'Mike B',
+        image: '/assets/images/mike_b.jpg',
+        start_year: 2006,
+        end_year: 2011,
+        strength: 'Muay Thai',
+        weakness: 'Protein farts',
+        description: 'The % formerly known as 4%'
+      },
+      {
+        name: 'Peter F',
+        image: '/assets/images/peter_f.jpg',
+        start_year: 2005,
+        end_year: 2011,
+        strength: "Doesn't get tired. Ever",
+        weakness: '	Death threats',
+        description: 'This water f***** sucks!'
+      },
+      {
+        name: 'Shannon W',
+        image: '/assets/images/shannon_w.jpg',
+        start_year: 2007,
+        end_year: 2011,
+        strength: 'Pushups',
+        weakness: 'Getting pressured into pushup competitions',
+        description: 'Loves long chariot rides by the beach'
+      }
+    ];
   }
 }
