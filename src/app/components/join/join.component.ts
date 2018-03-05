@@ -10,7 +10,6 @@ import { JoinData } from '../../models/join';
 export class JoinComponent implements OnInit {
 
   public joinData: JoinData = new JoinData();
-  public validAges: number[] = new Array(43).fill(0).map((x, i) => i + 17);;
   public genders: string[] = [ 'male', 'female' ];
   public experience: number[] = new Array(11).fill(0).map((x, i) => i);
   public preferences: string[] = [ 'none', 'left', 'right', 'drummer', 'cox' ];

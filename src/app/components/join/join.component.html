@@ -43,9 +43,7 @@
 
         <div class="col-md-3 margin-bottom-15">
           <div class="font-weight-300">Age</div>
-          <select class="form-control" [(ngModel)]="joinData.age">
-            <option *ngFor="let age of validAges" [ngValue]="age">{{ age }}</option>
-          </select>
+          <input type="text" class="form-control" [(ngModel)]="joinData.age" />
         </div>
       </div>
 
