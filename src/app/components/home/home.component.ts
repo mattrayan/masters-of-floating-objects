@@ -79,7 +79,7 @@ export class HomeComponent implements OnInit {
   }
 
   public goToResults(): void {
-    window.open('http://www.mofosdragonboat.com/Rankings/RankingsIndex.php', '_blank');
+    window.open('http://www.mofosdragonboat.com/Rankings/RankingsIndex.php');
   }
 
 }
