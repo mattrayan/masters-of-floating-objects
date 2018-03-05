@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit {
   }
 
   public goToRoute(route: string): void {
+    $('.navbar-collapse').removeClass('show');
     this.router.navigate([ route ]);
   }
 
