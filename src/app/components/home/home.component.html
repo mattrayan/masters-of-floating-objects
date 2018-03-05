@@ -4,7 +4,7 @@
 
     <div class="button-group">
       <button class="btn-primary-action btn-action" (click)="scrollToAbout()">Learn More</button>
-      <button class="btn-primary-action btn-action">Join the Team</button>
+      <button class="btn-primary-action btn-action" (click)="goToJoin()">Join the Team</button>
     </div>
 
     <div class="nav-arrow">
@@ -47,21 +47,21 @@
 
   <div class="container-fluid">
     <div class="row splash-body-nav">
-      <div class="col-md-4 splash-item-1">
+      <div class="col-md-4 splash-item-1" (click)="goToRoster()">
         <div class="inner-cover">
           <p class="cover-title">Roster</p>
           <p class="cover-text">Shirtless and Sexy</p>
         </div>
       </div>
 
-      <div class="col-md-4 splash-item-2">
+      <div class="col-md-4 splash-item-2" (click)="goToResults()">
         <div class="inner-cover">
           <p class="cover-title">A-Division</p>
           <p class="cover-text">Top Placings and Results</p>
         </div>
       </div>
 
-      <div class="col-md-4 splash-item-3">
+      <div class="col-md-4 splash-item-3" (click)="goToAlumni()">
         <div class="inner-cover">
           <p class="cover-title">Alumni</p>
           <p class="cover-text">{{ teamAge }} Years in the Making</p>

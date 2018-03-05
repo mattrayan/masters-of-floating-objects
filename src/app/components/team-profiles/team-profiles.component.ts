@@ -12,9 +12,9 @@ import { Profile } from '../../models/profiles';
 })
 export class TeamProfilesComponent implements OnInit {
 
-  private category: string;
-  private year: number = (new Date()).getFullYear();
-  private profiles: Profile[];
+  public category: string;
+  public year: number = (new Date()).getFullYear();
+  public profiles: Profile[];
 
   constructor(
     private activatedRoute: ActivatedRoute,

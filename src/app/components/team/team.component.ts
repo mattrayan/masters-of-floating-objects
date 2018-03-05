@@ -8,8 +8,8 @@ import { Router }  from '@angular/router';
 })
 export class TeamComponent implements OnInit {
 
-  private year: number = (new Date()).getFullYear();
-  private teamAge: number = (new Date()).getFullYear() - 2002;
+  public year: number = (new Date()).getFullYear();
+  public teamAge: number = (new Date()).getFullYear() - 2002;
 
   constructor(private router: Router) { }
 

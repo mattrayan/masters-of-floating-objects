@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   public newsItems: NewsItem[];
   public pictures: Picture[];
-  private teamAge: number = (new Date()).getFullYear() - 2002;
+  public teamAge: number = (new Date()).getFullYear() - 2002;
 
   constructor(
     private router: Router,
@@ -64,6 +64,22 @@ export class HomeComponent implements OnInit {
 
   public goToNewsItem(id: number): void {
     this.router.navigate([ 'news', id ]);
+  }
+
+  public goToJoin(): void {
+    this.router.navigate([ 'join' ]);
+  }
+
+  public goToRoster(): void {
+    this.router.navigate([ 'team', 'roster' ]);
+  }
+
+  public goToAlumni(): void {
+    this.router.navigate([ 'team', 'alumni' ]);
+  }
+
+  public goToResults(): void {
+    window.open('http://www.mofosdragonboat.com/Rankings/RankingsIndex.php', '_blank');
   }
 
 }
