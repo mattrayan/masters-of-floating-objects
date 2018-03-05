@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }  from '@angular/router';
+import * as $ from 'jquery';
 
 import { NewsService } from '../../services/news.service';
 
@@ -20,7 +21,24 @@ export class GalleryComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    $(document).ready(() => {
+      this.setAlbumHeight();
+
+      $(window).resize(() => {
+        this.setAlbumHeight();
+      });
+    });
+
     this.getAlbums();
+  }
+
+  public setAlbumHeight(): void {
+    const albums: any = $('.album');
+
+    if (albums.length) {
+      const width: number = $(albums[0]).width();
+      $(albums).height(width);
+    }
   }
 
   public getAlbums(): void {

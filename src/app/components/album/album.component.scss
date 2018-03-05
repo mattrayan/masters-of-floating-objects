@@ -23,11 +23,10 @@
 
       .inner-cover {
         display: none;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(255, 255, 255, 0.8);
         font-size: 14px;
         height: 100%;
         width: 100%;
-        color: #FFFFFF;
         padding: 0 15px 0 15px;
       }
 
@@ -66,6 +65,8 @@
   }
 
   /deep/ ngb-carousel {
+    outline: none;
+
     .carousel-control-prev, .carousel-control-next, .carousel-indicators li {
       cursor: pointer;
     }
@@ -73,6 +74,12 @@
     .carousel-caption {
       font-size: 14px;
       display: none;
+    }
+
+    @media (max-width: 575px) {
+      .carousel-indicators {
+        display: none;
+      }
     }
 
     .carousel-inner:hover {
