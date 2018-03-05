@@ -202,7 +202,7 @@ export class NewsService {
         image: '/assets/images/jon_yeung.jpg',
         start_year: 2014,
         end_year: null,
-        strength: 'Appropriate and timely application of Star Trek quotes',
+        strength: 'Star Trek quotes',
         weakness: '	Dan tat',
         description: 'Hot (Like earl grey)'
       }
@@ -262,8 +262,8 @@ export class NewsService {
         start_year: 2007,
         end_year: 2011,
         strength: 'Pushups',
-        weakness: 'Getting pressured into pushup competitions',
-        description: 'Loves long chariot rides by the beach'
+        weakness: 'Pressured into pushup competitions',
+        description: 'Jacked'
       }
     ];
   }
