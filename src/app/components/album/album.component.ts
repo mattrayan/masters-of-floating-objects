@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import * as $ from 'jquery';
 
 import { NewsService } from '../../services/news.service';
@@ -19,8 +20,11 @@ export class AlbumComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private ngbCarouselConfig: NgbCarouselConfig,
     private news: NewsService
-  ) { }
+  ) {
+    this.ngbCarouselConfig.interval = 0;
+  }
 
   ngOnInit() {
     this.activatedRoute.url.subscribe(url => {
