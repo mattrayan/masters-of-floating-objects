@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }  from '@angular/router';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-team',
@@ -14,6 +15,20 @@ export class TeamComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    $(document).ready(() => {
+      this.setCoverHeight();
+
+      $(window).resize(() => {
+        this.setCoverHeight();
+      });
+    });
+  }
+
+  public setCoverHeight(): void {
+    const coverItems: any = $('.splash-item');
+
+    const width: number = $(coverItems[0]).width();
+    $(coverItems).height(width);
   }
 
   public goToJoin(): void {

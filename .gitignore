@@ -6,7 +6,7 @@
 /out-tsc
 
 # dependencies
-/node_modules
+/frontend/node_modules
 
 # IDEs and editors
 /.idea
@@ -32,6 +32,7 @@
 npm-debug.log
 testem.log
 /typings
+/frontend/dist
 
 # e2e
 /e2e/*.js
@@ -44,3 +45,10 @@ Thumbs.db
 # Firebase
 .firebaserc
 firebase.json
+
+# Django
+*.DS_Store
+*.pyc
+__pycache__
+db.sqlite3
+/static
