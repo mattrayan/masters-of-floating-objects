@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'ckeditor',
+
+    'content',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +136,8 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder'
 )
+
+
+# ckeditor
+
+CKEDITOR_UPLOAD_PATH = os.path.join(BASE_DIR, 'uploads')

@@ -185,39 +185,27 @@ body {
     }
   }
 
-  .card-img-action {
-    display: none;
-    height: 100%;
-  }
-
   .card-img-top {
     height: 240px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     border-radius: 2px !important;
-
-    &:hover {
-      opacity: 0.7;
-
-      .card-img-action {
-        display: flex !important;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-      }
-    }
   }
 
   .card-block {
     flex: 1 1 auto;
     padding-top: 15px;
     padding-bottom: 15px;
+  }
 
-    &:hover {
-      .card-title {
-        color: #1DAFEC !important;
-      }
+  &:hover {
+    .card-img-top {
+      opacity: 0.7;
+    }
+
+    .card-title {
+      color: #1DAFEC !important;
     }
   }
 }
