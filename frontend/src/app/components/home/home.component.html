@@ -17,12 +17,12 @@
 
     <div class="content-body">
       <div class="row">
-        <div class="col-md-4" *ngFor="let item of newsItems | slice:0:3">
+        <div class="col-md-4" *ngFor="let item of news | slice:0:3">
           <div class="card" (click)="goToNewsItem(item.id)">
             <div class="card-img-top" [ngStyle]="{ 'background-image': 'url(' + item.image + ')' }"></div>
             <div class="card-block">
               <h5 class="card-title text-center font-weight-300 font-size-18">{{ item.title }}</h5>
-              <p class="card-text font-weight-300 font-size-14">{{ item.full | truncate:280 }}</p>
+              <p class="card-text font-weight-300 font-size-14">{{ item.body | stripHtml | truncate:280 }}</p>
             </div>
           </div>
         </div>

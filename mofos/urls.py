@@ -26,6 +26,7 @@ from content import views as content_views
 
 router = DefaultRouter()
 router.register(r'about', content_views.AboutViewSet)
+router.register(r'news', content_views.NewsViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

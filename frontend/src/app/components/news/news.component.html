@@ -4,13 +4,13 @@
 
     <div class="content-body block justify-left font-weight-300">
       <div class="row">
-        <div class="col-md-4" *ngFor="let item of newsItems">
+        <div class="col-md-4" *ngFor="let item of news">
           <div class="card" (click)="goToNewsItem(item.id)">
             <div class="card-img-top" [ngStyle]="{ 'background-image': 'url(' + item.image + ')' }"></div>
             <div class="card-block">
               <h5 class="card-title font-weight-300 font-size-18">{{ item.title }}</h5>
-              <h6 class="card-subtitle mb-2 text-muted font-weight-300 font-size-14">{{ item.published }}</h6>
-              <p class="card-text font-weight-300 font-size-14">{{ item.full | truncate:280 }}</p>
+              <h6 class="card-subtitle mb-2 text-muted font-weight-300 font-size-14">{{ item.published | date:'longDate' }}</h6>
+              <p class="card-text font-weight-300 font-size-14">{{ item.body | stripHtml | truncate:280 }}</p>
             </div>
           </div>
         </div>

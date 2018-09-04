@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { NewsService } from '../../services/news.service';
+import { ContentService } from '../../services/content.service';
 
-import { NewsItem } from '../../models/news';
+import { News } from '../../models/content';
 
 @Component({
   selector: 'app-news-item',
@@ -12,11 +12,11 @@ import { NewsItem } from '../../models/news';
 })
 export class NewsItemComponent implements OnInit {
 
-  public item: NewsItem;
+  public item: News;
 
   constructor(
-    private news: NewsService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private content: ContentService
   ) { }
 
   ngOnInit() {
@@ -31,7 +31,8 @@ export class NewsItemComponent implements OnInit {
   }
 
   public getNewsItem(id: number): void {
-    this.item = this.news.getNewsItem(id);
+    this.content.getNewsItem(id)
+      .subscribe((result: News) => this.item = result);
   }
 
 }

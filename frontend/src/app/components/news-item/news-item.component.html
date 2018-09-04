@@ -1,9 +1,9 @@
 <div class="content-page-container">
-  <div class="row">
+  <div *ngIf="item" class="row">
     <div class="col-md-6 content-block justify-top align-left">
       <div class="content-title">{{ item.title }}</div>
-      <div class="content-subtitle text-muted font-size-14 margin-bottom-15">{{ item.published }}</div>
-      <div class="content-body justify-left" [innerHTML]="item.full"></div>
+      <div class="content-subtitle text-muted font-size-14 margin-bottom-15">{{ item.published | date:'longDate' }}</div>
+      <div class="content-body justify-left" [innerHTML]="item.body"></div>
     </div>
 
     <div class="col-md-6 image-block">

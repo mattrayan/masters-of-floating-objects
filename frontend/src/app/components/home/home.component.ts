@@ -6,7 +6,7 @@ import * as $ from 'jquery';
 import { ContentService } from '../../services/content.service';
 import { NewsService } from '../../services/news.service';
 
-import { NewsItem, Picture } from '../../models/news';
+import { News } from '../../models/content';
 
 @Component({
   selector: 'app-home',
@@ -16,14 +16,13 @@ import { NewsItem, Picture } from '../../models/news';
 export class HomeComponent implements OnInit {
 
   public about: string = '';
-  public newsItems: NewsItem[];
-  public pictures: Picture[];
+  public news: News[] = [];
+
   public teamAge: number = (new Date()).getFullYear() - 2002;
 
   constructor(
     private router: Router,
     private content: ContentService,
-    private news: NewsService
   ) { }
 
   ngOnInit() {
@@ -36,24 +35,21 @@ export class HomeComponent implements OnInit {
     });
 
     const initObservables: Observable<any>[] = [
-      this.content.getAbout()
+      this.content.getAbout(),
+      this.content.getNews()
     ];
 
     Observable.forkJoin(initObservables)
-      .subscribe(([ about ]) => {
+      .subscribe(([ about, news ]) => {
         this.about = about;
+        this.news = news;
+        console.log(news);
       });
-
-    this.getNews();
   }
 
   public setSplashHeight(): void {
     const splashHeight: number = $(window).height() - $('.navbar').outerHeight();
     $('.splash').height(splashHeight);
-  }
-
-  public getNews(): void {
-    this.newsItems = this.news.getNews();
   }
 
   public scrollToContent(): void {

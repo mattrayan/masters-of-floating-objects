@@ -24,6 +24,7 @@ import { ContentService } from './services/content.service';
 
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { StripHtmlPipe } from './pipes/strip-html.pipe';
 
 const routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -53,7 +54,8 @@ const routes = [
     TeamProfilesComponent,
     ScheduleComponent,
     CapitalizePipe,
-    TruncatePipe
+    TruncatePipe,
+    StripHtmlPipe
   ],
   imports: [
     BrowserModule,
