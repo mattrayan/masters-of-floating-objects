@@ -20,6 +20,7 @@ import { TeamProfilesComponent } from './components/team-profiles/team-profiles.
 import { ScheduleComponent } from './components/schedule/schedule.component';
 
 import { NewsService } from './services/news.service';
+import { ContentService } from './services/content.service';
 
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
@@ -62,7 +63,8 @@ const routes = [
     NgbCarouselModule.forRoot()
   ],
   providers: [
-    NewsService
+    NewsService,
+    ContentService
   ],
   bootstrap: [ AppComponent ]
 })

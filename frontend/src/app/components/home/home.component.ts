@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }  from '@angular/router';
+import { Observable } from 'rxjs/Rx';
 import * as $ from 'jquery';
 
+import { ContentService } from '../../services/content.service';
 import { NewsService } from '../../services/news.service';
 
 import { NewsItem, Picture } from '../../models/news';
@@ -13,12 +15,14 @@ import { NewsItem, Picture } from '../../models/news';
 })
 export class HomeComponent implements OnInit {
 
+  public about: string = '';
   public newsItems: NewsItem[];
   public pictures: Picture[];
   public teamAge: number = (new Date()).getFullYear() - 2002;
 
   constructor(
     private router: Router,
+    private content: ContentService,
     private news: NewsService
   ) { }
 
@@ -31,6 +35,15 @@ export class HomeComponent implements OnInit {
       });
     });
 
+    const initObservables: Observable<any>[] = [
+      this.content.getAbout()
+    ];
+
+    Observable.forkJoin(initObservables)
+      .subscribe(([ about ]) => {
+        this.about = about;
+      });
+
     this.getNews();
   }
 
@@ -41,7 +54,6 @@ export class HomeComponent implements OnInit {
 
   public getNews(): void {
     this.newsItems = this.news.getNews();
-    console.log(this.newsItems);
   }
 
   public scrollToContent(): void {

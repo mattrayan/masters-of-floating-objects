@@ -222,6 +222,10 @@ body {
   letter-spacing: 2px;
   background-color: #1DAFEC;
 
+  &:focus {
+    outline: none;
+  }
+
   &:hover {
     background-color: #77CEF3;
   }

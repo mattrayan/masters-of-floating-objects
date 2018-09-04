@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}" />
   </head>
   <body>
+    {% csrf_token %}
     <app-root></app-root>
 
     <script type="text/javascript" src="{% static 'inline.bundle.js' %}"></script>
