@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 
-import { About, News } from '../models/content';
+import { About, News, Profile } from '../models/content';
 
 const ABOUT_URL: string = '/api/about/';
 const NEWS_URL: string = '/api/news';
+const PROFILES_URL: string = '/api/profiles';
 
 @Injectable()
 export class ContentService {
@@ -25,6 +26,11 @@ export class ContentService {
   public getNewsItem(id: number): Observable<News> {
     return this.http.get(`${NEWS_URL}/${id}`)
       .map((result: News) => result);
+  }
+
+  public getProfiles(alumni?: boolean): Observable<Profile[]> {
+    return this.http.get(`${PROFILES_URL}/${alumni ? '?alumni=true' : ''}`)
+      .map((results: Profile[]) => results);
   }
 
 }

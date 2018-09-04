@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { NewsService } from '../../services/news.service';
+import { ContentService } from '../../services/content.service';
 
-import { Profile } from '../../models/profiles';
+import { Profile } from '../../models/content';
 
 @Component({
   selector: 'app-team-profiles',
@@ -18,18 +18,15 @@ export class TeamProfilesComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private news: NewsService
+    private content: ContentService,
   ) { }
 
   ngOnInit() {
     this.activatedRoute.url.subscribe(url => {
       this.category = url[1].path;
 
-      if (this.category === 'roster') {
-        this.profiles = this.news.getRoster();
-      } else {
-        this.profiles = this.news.getAlumni();
-      }
+      this.content.getProfiles((this.category === 'alumni'))
+        .subscribe((results: Profile[]) => this.profiles = results);
     });
   }
 

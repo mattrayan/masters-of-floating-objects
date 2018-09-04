@@ -25,3 +25,26 @@ class News(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Profile(models.Model):
+
+    LEFT = 'left'
+    RIGHT = 'right'
+
+    PADDLE_CHOICES = (
+        (LEFT, 'Left'),
+        (RIGHT, 'Right'),
+    )
+
+    first_name = models.CharField(max_length=30, blank=False, null=False)
+    last_initial = models.CharField(max_length=1, blank=False, null=False)
+    image = models.ImageField('image', upload_to='profile_images', blank=False, null=False)
+    paddle = models.CharField(max_length=5, choices=PADDLE_CHOICES, default=RIGHT)
+    active = models.BooleanField(default=True)
+    captain = models.BooleanField(default=False)
+    coach = models.BooleanField(default=False)
+    admin = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_initial}'
