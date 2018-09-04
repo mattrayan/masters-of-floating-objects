@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from ckeditor.widgets import CKEditorWidget
 
-from .models import About
+from .models import About, News
 
 
 class AboutForm(forms.ModelForm):
@@ -21,3 +21,22 @@ class AboutForm(forms.ModelForm):
 class AboutAdmin(admin.ModelAdmin):
 
     form = AboutForm
+
+
+class NewsForm(forms.ModelForm):
+
+    body = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = News
+        fields = (
+            'title',
+            'image',
+            'body',
+        )
+
+
+@admin.register(News)
+class NewsAdmin(admin.ModelAdmin):
+
+    form = NewsForm
