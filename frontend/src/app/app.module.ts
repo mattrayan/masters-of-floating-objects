@@ -23,6 +23,7 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 
 import { NewsService } from './services/news.service';
 import { CacheService } from './services/cache.service';
+import { ContactService } from './services/contact.service';
 import { ContentService } from './services/content.service';
 
 import { CapitalizePipe } from './pipes/capitalize.pipe';
@@ -72,6 +73,7 @@ const routes = [
     { provide: HTTP_INTERCEPTORS, useClass: HttpXsrfInterceptor, multi: true },
     NewsService,
     CacheService,
+    ContactService,
     ContentService
   ],
   bootstrap: [ AppComponent ]

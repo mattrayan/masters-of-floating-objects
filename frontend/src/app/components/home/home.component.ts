@@ -3,9 +3,11 @@ import { Router }  from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import * as $ from 'jquery';
 
+import { ContactService } from '../../services/contact.service';
 import { ContentService } from '../../services/content.service';
 import { NewsService } from '../../services/news.service';
 
+import { Message } from '../../models/contact';
 import { News } from '../../models/content';
 
 @Component({
@@ -17,11 +19,12 @@ export class HomeComponent implements OnInit {
 
   public about: string = '';
   public news: News[] = [];
-
+  public message: Message = new Message;
   public teamAge: number = (new Date()).getFullYear() - 2002;
 
   constructor(
     private router: Router,
+    private contact: ContactService,
     private content: ContentService,
   ) { }
 
@@ -43,7 +46,6 @@ export class HomeComponent implements OnInit {
       .subscribe(([ about, news ]) => {
         this.about = about;
         this.news = news;
-        console.log(news);
       });
   }
 
@@ -64,6 +66,14 @@ export class HomeComponent implements OnInit {
     const contentPosition: number = $('#about-block').offset().top - $(window).scrollTop();
 
     $('html, body').animate({scrollTop: `+=${contentPosition - navbarBufferHeight}px`}, 500);
+  }
+
+  public sendMessage(): void {
+    this.message.processing = true;
+
+    this.contact.message(this.message)
+      .finally(() => this.message.processing = false)
+      .subscribe((response: Message) => this.message.sent = true);
   }
 
   public goToNews(): void {
