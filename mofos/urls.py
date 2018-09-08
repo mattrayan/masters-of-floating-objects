@@ -21,6 +21,7 @@ from django.urls import path
 from rest_framework.routers import DefaultRouter
 
 from .views import spa
+from contact import views as contact_views
 from content import views as content_views
 
 
@@ -28,6 +29,7 @@ router = DefaultRouter()
 router.register(r'about', content_views.AboutViewSet)
 router.register(r'news', content_views.NewsViewSet)
 router.register(r'profiles', content_views.ProfileViewSet)
+router.register(r'message', contact_views.MessageViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
