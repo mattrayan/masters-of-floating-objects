@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientXsrfModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { HttpXsrfInterceptor } from './interceptors/http.interceptor';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -20,6 +22,7 @@ import { TeamProfilesComponent } from './components/team-profiles/team-profiles.
 import { ScheduleComponent } from './components/schedule/schedule.component';
 
 import { NewsService } from './services/news.service';
+import { CacheService } from './services/cache.service';
 import { ContentService } from './services/content.service';
 
 import { CapitalizePipe } from './pipes/capitalize.pipe';
@@ -61,11 +64,14 @@ const routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    HttpClientXsrfModule.withOptions({ cookieName: 'csrftoken', headerName: 'X-CSRFToken' }),
     RouterModule.forRoot(routes),
     NgbCarouselModule.forRoot()
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpXsrfInterceptor, multi: true },
     NewsService,
+    CacheService,
     ContentService
   ],
   bootstrap: [ AppComponent ]
