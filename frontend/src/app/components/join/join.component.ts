@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { JoinData } from '../../models/join';
+import { ContactService } from '../../services/contact.service';
+
+import { Join } from '../../models/contact';
 
 @Component({
   selector: 'app-join',
@@ -9,14 +11,22 @@ import { JoinData } from '../../models/join';
 })
 export class JoinComponent implements OnInit {
 
-  public joinData: JoinData = new JoinData();
+  public join: Join = new Join();
   public genders: string[] = [ 'male', 'female' ];
   public experience: number[] = new Array(11).fill(0).map((x, i) => i);
   public preferences: string[] = [ 'none', 'left', 'right', 'drummer', 'cox' ];
 
-  constructor() { }
+  constructor(private contact: ContactService) { }
 
   ngOnInit() {
+  }
+
+  public sendJoin(): void {
+    this.join.processing = true;
+
+    this.contact.join(this.join)
+      .finally(() => this.join.processing = false)
+      .subscribe((result: Join) => this.join.sent = true)
   }
 
 }

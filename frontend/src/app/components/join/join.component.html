@@ -17,33 +17,33 @@
       <div class="row">
         <div class="col-md-3 offset-md-3 margin-bottom-15">
           <div class="font-weight-300">First Name</div>
-          <input type="text" class="form-control" [(ngModel)]="joinData.first_name" />
+          <input type="text" class="form-control" [(ngModel)]="join.first_name" />
         </div>
 
         <div class="col-md-3 margin-bottom-15">
           <div class="font-weight-300">Last Name</div>
-          <input type="text" class="form-control" [(ngModel)]="joinData.last_name" />
+          <input type="text" class="form-control" [(ngModel)]="join.last_name" />
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-3 offset-md-3 margin-bottom-15">
           <div class="font-weight-300">Email</div>
-          <input type="text" class="form-control" [(ngModel)]="joinData.email" />
+          <input type="text" class="form-control" [(ngModel)]="join.email" />
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-3 offset-md-3 margin-bottom-15">
           <div class="font-weight-300">Gender</div>
-          <select class="form-control" [(ngModel)]="joinData.gender">
+          <select class="form-control" [(ngModel)]="join.gender">
             <option *ngFor="let gender of genders" [ngValue]="gender">{{ gender | capitalize }}</option>
           </select>
         </div>
 
         <div class="col-md-3 margin-bottom-15">
           <div class="font-weight-300">Age</div>
-          <input type="text" class="form-control" [(ngModel)]="joinData.age" />
+          <input type="text" class="form-control" [(ngModel)]="join.age" />
         </div>
       </div>
 
@@ -56,14 +56,14 @@
       <div class="row">
         <div class="col-md-3 offset-md-3 margin-bottom-15">
           <div class="font-weight-300">Experience</div>
-          <select class="form-control" [(ngModel)]="joinData.paddling_experience">
+          <select class="form-control" [(ngModel)]="join.paddling_experience">
             <option *ngFor="let year of experience" [ngValue]="year">{{ year === 0 ? 'None' : year + ' years' }}</option>
           </select>
         </div>
 
         <div class="col-md-3 margin-bottom-15">
           <div class="font-weight-300">Preference</div>
-          <select class="form-control" [(ngModel)]="joinData.paddling_preference">
+          <select class="form-control" [(ngModel)]="join.paddling_preference">
             <option *ngFor="let preference of preferences" [ngValue]="preference">{{ preference === 'cox' ? 'Cox (Steersperson)' : preference | capitalize }}</option>
           </select>
         </div>
@@ -72,7 +72,7 @@
       <div class="row">
         <div class="col-md-6 offset-md-3 margin-bottom-15">
           <div class="font-weight-300">Previous Team Names</div>
-          <textarea class="form-control" [(ngModel)]="joinData.previous_teams"></textarea>
+          <textarea class="form-control" [(ngModel)]="join.previous_teams"></textarea>
         </div>
       </div>
 
@@ -85,31 +85,31 @@
       <div class="row">
         <div class="col-md-3 offset-md-3 margin-bottom-15">
           <div class="font-weight-300">Weight</div>
-          <input type="text" class="form-control" [(ngModel)]="joinData.weight" />
+          <input type="text" class="form-control" [(ngModel)]="join.weight" />
         </div>
 
         <div class="col-md-3 margin-bottom-15">
           <div class="font-weight-300">Height</div>
-          <input type="text" class="form-control" [(ngModel)]="joinData.height" />
+          <input type="text" class="form-control" [(ngModel)]="join.height" />
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-3 offset-md-3 margin-bottom-15">
           <div class="font-weight-300">Max Bench Press</div>
-          <input type="text" class="form-control" [(ngModel)]="joinData.max_bench_press" />
+          <input type="text" class="form-control" [(ngModel)]="join.max_bench_press" />
         </div>
 
         <div class="col-md-3 margin-bottom-15">
           <div class="font-weight-300">Max Number of Chinups</div>
-          <input type="text" class="form-control" [(ngModel)]="joinData.max_number_chinups" />
+          <input type="text" class="form-control" [(ngModel)]="join.max_number_chinups" />
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-3 offset-md-3 margin-bottom-15">
           <div class="font-weight-300">5km Jog Time</div>
-          <input type="text" class="form-control" [(ngModel)]="joinData.five_km_jog_time" />
+          <input type="text" class="form-control" [(ngModel)]="join.five_km_jog_time" />
         </div>
       </div>
 
@@ -121,13 +121,13 @@
 
       <div class="row">
         <div class="col-md-6 offset-md-3 margin-bottom-15">
-          <textarea class="form-control" [(ngModel)]="joinData.comments"></textarea>
+          <textarea class="form-control" [(ngModel)]="join.comments"></textarea>
         </div>
       </div>
 
       <div class="row margin-top-15">
         <div class="col-md-6 offset-md-3 text-center">
-          <button class="btn-primary-action">Submit</button>
+          <button class="btn-primary-action" [disabled]="join.processing || join.sent || !join.email" (click)="sendJoin()">{{ join.sent ? 'Sent' : 'Submit' }}</button>
         </div>
       </div>
 
