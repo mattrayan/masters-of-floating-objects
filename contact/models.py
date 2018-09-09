@@ -11,6 +11,13 @@ class Message(models.Model):
     def __str__(self):
         return f'{self.name} ({self.email}) - {self.timestamp}'
 
+    def stringify(self):
+        return f'\
+            Name: {self.name}\n\
+            Email: {self.email}\n\
+            Message: {self.message}\n\
+        '
+
 
 class Join(models.Model):
 
