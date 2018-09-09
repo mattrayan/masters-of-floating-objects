@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from .models import Join, Message
-from .utils import forward_message
+from .utils import forward_message, forward_join
 
 
 class MessageSerializer(serializers.ModelSerializer):
@@ -40,3 +40,8 @@ class JoinSerializer(serializers.ModelSerializer):
             'five_km_jog_time',
             'comments',
         )
+
+    def create(self, validated_data):
+        join = Join.objects.create(**validated_data)
+        forward_join(join)
+        return join

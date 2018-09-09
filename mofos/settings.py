@@ -28,6 +28,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = str_to_bool(os.environ.get('DJANGO_DEBUG_LEVEL', 'True'))
 
+ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL', '')
+
 ALLOWED_HOSTS = []
 
 

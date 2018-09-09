@@ -57,3 +57,15 @@ class Join(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name} ({self.email}) - {self.timestamp}'
+
+    def stringify(self):
+        return f'First Name: {self.first_name}\nLast Name: {self.last_name}\nEmail: {self.email}\n\nGender: {self.gender}\nAge: {self.age}\n\nPaddling Experience: {self.paddling_experience} years\nPaddling Preference: {self.paddling_preference}\nPrevious Teams: {self.previous_teams}\n\nWeight: {self.weight}\nHeight: {self.height}\nMax Bench Press: {self.max_bench_press}\nMax Number of Chinups: {self.max_number_chinups}\n5km Jog Time: {self.five_km_jog_time}\n\nComments: {self.comments}'
+
+
+class EmailForward(models.Model):
+
+    name = models.CharField(max_length=50, blank=False, null=False)
+    email = models.CharField(max_length=50, blank=False, null=False)
+
+    def __str__(self):
+        return f'{self.name} ({self.email})'
