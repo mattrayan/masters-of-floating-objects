@@ -1,16 +1,12 @@
-import os
-from email.mime.text import MIMEText
-from subprocess import Popen, PIPE
-
-from django.conf import settings
+from django.core.mail import EmailMessage
 
 from .models import Message
 
 
 def forward_message(message: Message):
-    msg = MIMEText(message.stringify())
-    msg['From'] = 'mofosdragonboat@gmail.com'
-    msg['To'] = 'matt.rayan@advisorstream.com'
-    msg['Subject'] = f'Subject: [MOFOs] New message from {message.name}\n'
-    p = Popen([settings.SENDMAIL_PATH, '-t', '-oi'], stdin=PIPE)
-    p.communicate(msg.as_bytes())
+    subject = f'[MOFOs] New message from {message.name}'
+    body = message.stringify()
+    to='matt.rayan@advisorstream.com'
+
+    email = EmailMessage(subject, body, to=[to])
+    email.send()

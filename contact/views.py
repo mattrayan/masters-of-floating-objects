@@ -13,6 +13,12 @@ class MessageViewSet(viewsets.ModelViewSet):
         AllowAny,
     )
 
+    def get_queryset(self):
+        if self.request.user.is_staff:
+            return self.queryset
+        else:
+            return Message.objects.none()
+
 
 class JoinViewSet(viewsets.ModelViewSet):
 
@@ -21,3 +27,9 @@ class JoinViewSet(viewsets.ModelViewSet):
     permission_classes = (
         AllowAny,
     )
+
+    def get_queryset(self):
+        if self.request.user.is_staff:
+            return self.queryset
+        else:
+            return Join.objects.none()
