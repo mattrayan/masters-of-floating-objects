@@ -226,7 +226,7 @@ body {
     outline: none;
   }
 
-  &:hover {
+  &:hover, &[disabled] {
     background-color: #77CEF3;
   }
 }
@@ -245,6 +245,7 @@ body {
       padding-right: 15px;
       padding-left: 15px;
       height: initial;
+      background-position: center center;
     }
 
     .inner-cover {
@@ -268,6 +269,7 @@ body {
         padding-left: 8px;
         padding-right: 8px;
         border-radius: 2px;
+        text-align: center;
       }
 
       .cover-title {
@@ -275,6 +277,7 @@ body {
         font-size: 35px;
         font-weight: 700;
         margin-bottom: 10px;
+        text-align: center;
       }
 
       .cover-text {

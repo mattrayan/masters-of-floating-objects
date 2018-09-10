@@ -134,3 +134,9 @@ $dropDown       : true;
     }
   }
 }
+
+@media (min-width: 992px) {
+  .mobile-text {
+    display: none;
+  }
+}

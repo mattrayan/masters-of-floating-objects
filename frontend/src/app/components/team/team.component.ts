@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router }  from '@angular/router';
 import * as $ from 'jquery';
 
 @Component({
@@ -12,7 +11,7 @@ export class TeamComponent implements OnInit {
   public year: number = (new Date()).getFullYear();
   public teamAge: number = (new Date()).getFullYear() - 2002;
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
     $(document).ready(() => {
@@ -29,18 +28,6 @@ export class TeamComponent implements OnInit {
 
     const width: number = $(coverItems[0]).width();
     $(coverItems).height(width);
-  }
-
-  public goToJoin(): void {
-    this.router.navigate([ 'join' ]);
-  }
-
-  public goToRoster(): void {
-    this.router.navigate([ 'team', 'roster' ]);
-  }
-
-  public goToAlumni(): void {
-    this.router.navigate([ 'team', 'alumni' ]);
   }
 
 }

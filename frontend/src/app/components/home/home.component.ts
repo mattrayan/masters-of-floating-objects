@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router }  from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import * as $ from 'jquery';
 
@@ -23,7 +22,6 @@ export class HomeComponent implements OnInit {
   public teamAge: number = (new Date()).getFullYear() - 2002;
 
   constructor(
-    private router: Router,
     private contact: ContactService,
     private content: ContentService,
   ) { }
@@ -69,31 +67,15 @@ export class HomeComponent implements OnInit {
   }
 
   public sendMessage(): void {
+    if (!this.message.name || !this.message.email || !this.message.message) {
+      return;
+    }
+
     this.message.processing = true;
 
     this.contact.message(this.message)
       .finally(() => this.message.processing = false)
       .subscribe((response: Message) => this.message.sent = true);
-  }
-
-  public goToNews(): void {
-    this.router.navigate([ 'news' ]);
-  }
-
-  public goToNewsItem(id: number): void {
-    this.router.navigate([ 'news', id ]);
-  }
-
-  public goToJoin(): void {
-    this.router.navigate([ 'join' ]);
-  }
-
-  public goToRoster(): void {
-    this.router.navigate([ 'team', 'roster' ]);
-  }
-
-  public goToAlumni(): void {
-    this.router.navigate([ 'team', 'alumni' ]);
   }
 
   public goToResults(): void {

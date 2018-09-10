@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router }  from '@angular/router';
 
 import { ContentService } from '../../services/content.service';
 
@@ -14,18 +13,11 @@ export class NewsComponent implements OnInit {
 
   public news: News[];
 
-  constructor(
-    private router: Router,
-    private content: ContentService
-  ) { }
+  constructor(private content: ContentService) { }
 
   ngOnInit() {
     this.content.getNews()
       .subscribe((results: News[]) => this.news = results);
-  }
-
-  public goToNewsItem(id: number): void {
-    this.router.navigate([ 'news', id ]);
   }
 
 }

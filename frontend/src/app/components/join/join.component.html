@@ -127,7 +127,7 @@
 
       <div class="row margin-top-15">
         <div class="col-md-6 offset-md-3 text-center">
-          <button class="btn-primary-action" [disabled]="join.processing || join.sent || !join.email" (click)="sendJoin()">{{ join.sent ? 'Sent' : 'Submit' }}</button>
+          <button class="btn-primary-action" [disabled]="join.processing || join.sent" (click)="sendJoin()">{{ join.sent ? 'Sent' : 'Submit' }}</button>
         </div>
       </div>
 

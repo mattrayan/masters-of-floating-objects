@@ -22,6 +22,10 @@ export class JoinComponent implements OnInit {
   }
 
   public sendJoin(): void {
+    if (!this.join.email) {
+      return;
+    }
+
     this.join.processing = true;
 
     this.contact.join(this.join)

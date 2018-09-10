@@ -6,7 +6,7 @@
       <div class="row splash-body-nav">
 
         <div class="col-md-4 padded">
-          <div class="splash-item splash-item-4" (click)="goToRoster()">
+          <div class="splash-item splash-item-4" routerLink="/team/roster">
             <div class="inner-cover">
               <p class="cover-title">Current Roster</p>
               <p class="cover-text">{{ year }} Line-up</p>
@@ -15,7 +15,7 @@
         </div>
 
         <div class="col-md-4 padded">
-          <div class="splash-item splash-item-5" (click)="goToAlumni()">
+          <div class="splash-item splash-item-5" routerLink="/team/alumni">
             <div class="inner-cover">
               <p class="cover-title">Alumni</p>
               <p class="cover-text">{{ teamAge }} Years of Flexing</p>
@@ -24,7 +24,7 @@
         </div>
 
         <div class="col-md-4 padded">
-          <div class="splash-item splash-item-6" (click)="goToJoin()">
+          <div class="splash-item splash-item-6" routerLink="/join">
             <div class="inner-cover">
               <p class="cover-title">Join</p>
               <p class="cover-text">How much can you bench?</p>

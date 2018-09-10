@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router }  from '@angular/router';
 import * as $ from 'jquery';
 
 import { NewsService } from '../../services/news.service';
@@ -15,10 +14,7 @@ export class GalleryComponent implements OnInit {
 
   public albums: Album[];
 
-  constructor(
-    private router: Router,
-    private news: NewsService
-  ) { }
+  constructor(private news: NewsService) { }
 
   ngOnInit() {
     $(document).ready(() => {
@@ -44,10 +40,6 @@ export class GalleryComponent implements OnInit {
   public getAlbums(): void {
     this.albums = this.news.getAlbums();
     console.log(this.albums);
-  }
-
-  public goToAlbum(id: number): void {
-    this.router.navigate([ 'album', id ]);
   }
 
 }
