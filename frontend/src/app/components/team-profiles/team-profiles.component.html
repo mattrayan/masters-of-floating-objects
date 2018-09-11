@@ -7,12 +7,11 @@
         <div class="col-lg-2 col-md-4 col-sm-4 col-6" *ngFor="let profile of profiles">
           <div class="profile" [ngStyle]="{ 'background-image': 'url(' + profile.image + ')' }">
             <div class="profile-overlay">
-              <div class="profile-info name">{{ profile.first_name }} {{ profile.last_initial }}.</div>
-              <div class="profile-info title" *ngIf="profile.captain">Captain</div>
-              <div class="profile-info title" *ngIf="profile.coach">Coach</div>
-              <div class="profile-info paddle">{{ profile.paddle | capitalize }} paddler</div>
+              <div class="profile-title" *ngIf="getTitle(profile); let title;">{{ title }}</div>
 
-              <div class="admin" *ngIf="profile.admin">Admin</div>
+              <div class="profile-info name">{{ profile.first_name }} {{ profile.last_initial }}.</div>
+              <div class="profile-info" *ngIf="profile.paddle">{{ profile.paddle | capitalize }} paddler</div>
+              <div class="profile-info" *ngIf="profile.joined">Joined {{ profile.joined }}</div>
             </div>
           </div>
         </div>

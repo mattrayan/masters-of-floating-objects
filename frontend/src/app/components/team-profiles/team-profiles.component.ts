@@ -30,4 +30,16 @@ export class TeamProfilesComponent implements OnInit {
     });
   }
 
+  public getTitle(profile: Profile): string {
+    if (profile.coach) {
+      return 'Coach';
+    } else if (profile.captain) {
+      return 'Captain';
+    } else if (profile.admin) {
+      return 'Admin'
+    } else {
+      return null;
+    }
+  }
+
 }

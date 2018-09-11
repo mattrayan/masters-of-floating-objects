@@ -15,6 +15,7 @@ export class Profile {
   last_initial: string;
   image: string;
   paddle: 'right' | 'left';
+  joined: number;
   active: boolean;
   captain: boolean;
   coach: boolean;

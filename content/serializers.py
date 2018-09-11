@@ -33,6 +33,7 @@ class ProfileSerializer(serializers.ModelSerializer):
             'last_initial',
             'image',
             'paddle',
+            'joined',
             'active',
             'captain',
             'coach',
