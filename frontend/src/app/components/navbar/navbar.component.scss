@@ -41,7 +41,7 @@ $dropDown       : true;
         font-weight: 300;
         cursor: pointer;
 
-        &:hover,  &:focus {
+        &:hover, &:focus, &:hover > span {
           color: $colHighlight;
         }
       }
