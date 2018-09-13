@@ -54,6 +54,7 @@ class Join(models.Model):
     five_km_jog_time = models.CharField(max_length=10, blank=True, default='')
     comments = models.TextField(default='', blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
+    notes = models.TextField(default='', blank=True, null=True)
 
     def __str__(self):
         return f'{self.first_name} {self.last_name} ({self.email}) - {self.timestamp}'
