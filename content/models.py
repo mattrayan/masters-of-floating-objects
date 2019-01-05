@@ -49,3 +49,15 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_initial}'
+
+
+class JoinDescription(models.Model):
+
+    description = models.TextField(default='', blank=False, null=False)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = verbose_name_plural = 'Join Description'
+
+    def __str__(self):
+        return f'Join Description ({self.timestamp})'

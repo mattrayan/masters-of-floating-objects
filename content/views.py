@@ -2,8 +2,13 @@ from django.db.models import Q
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 
-from .models import About, News, Profile
-from .serializers import AboutSerializer, NewsSerializer, ProfileSerializer
+from .models import About, News, Profile, JoinDescription
+from .serializers import (
+    AboutSerializer,
+    NewsSerializer,
+    ProfileSerializer,
+    JoinDescriptionSerializer,
+)
 
 
 class AboutViewSet(viewsets.ReadOnlyModelViewSet):
@@ -45,3 +50,12 @@ class ProfileViewSet(viewsets.ReadOnlyModelViewSet):
                         .exclude(captain=True) \
                         .exclude(coach=True)
             return captains | coaches | paddlers
+
+
+class JoinDescriptionViewSet(viewsets.ReadOnlyModelViewSet):
+
+    serializer_class = JoinDescriptionSerializer
+    queryset = JoinDescription.objects.all().order_by('-timestamp')
+    permission_classes = (
+        AllowAny,
+    )

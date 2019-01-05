@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import About, News, Profile
+from .models import About, News, Profile, JoinDescription
 
 
 class AboutSerializer(serializers.ModelSerializer):
@@ -38,4 +38,13 @@ class ProfileSerializer(serializers.ModelSerializer):
             'captain',
             'coach',
             'admin',
+        )
+
+
+class JoinDescriptionSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = JoinDescription
+        fields = (
+            'description',
         )

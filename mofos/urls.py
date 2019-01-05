@@ -29,6 +29,7 @@ router = DefaultRouter()
 router.register(r'about', content_views.AboutViewSet)
 router.register(r'news', content_views.NewsViewSet)
 router.register(r'profiles', content_views.ProfileViewSet)
+router.register(r'join-description', content_views.JoinDescriptionViewSet)
 router.register(r'message', contact_views.MessageViewSet)
 router.register(r'join', contact_views.JoinViewSet)
 

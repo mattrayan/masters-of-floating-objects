@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ContactService } from '../../services/contact.service';
+import { ContentService } from '../../services/content.service';
 
 import { Join } from '../../models/contact';
 
@@ -11,14 +12,20 @@ import { Join } from '../../models/contact';
 })
 export class JoinComponent implements OnInit {
 
+  public JoinDescription: string = '';
   public join: Join = new Join();
   public genders: string[] = [ 'male', 'female' ];
   public experience: number[] = new Array(11).fill(0).map((x, i) => i);
   public preferences: string[] = [ 'none', 'left', 'right', 'drummer', 'cox' ];
 
-  constructor(private contact: ContactService) { }
+  constructor(
+    private contact: ContactService,
+    private content: ContentService
+  ) { }
 
   ngOnInit() {
+    this.content.getJoinDescription()
+      .subscribe((result: string) => this.JoinDescription = result);
   }
 
   public sendJoin(): void {

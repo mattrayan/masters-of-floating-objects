@@ -2,6 +2,10 @@ export class About {
   description: string;
 }
 
+export class JoinDescription {
+  description: string;
+}
+
 export class News {
   id: number;
   title: string;

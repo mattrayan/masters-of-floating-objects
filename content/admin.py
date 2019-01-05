@@ -5,7 +5,7 @@ from django.contrib import admin
 
 from ckeditor.widgets import CKEditorWidget
 
-from .models import About, News, Profile
+from .models import About, News, Profile, JoinDescription
 
 
 class AboutForm(forms.ModelForm):
@@ -69,3 +69,20 @@ class ProfileForm(forms.ModelForm):
 class ProfileAdmin(admin.ModelAdmin):
 
     form = ProfileForm
+
+
+class JoinDescriptionForm(forms.ModelForm):
+
+    description = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = JoinDescription
+        fields = (
+            'description',
+        )
+
+
+@admin.register(JoinDescription)
+class JoinDescriptionAdmin(admin.ModelAdmin):
+
+    form = JoinDescriptionForm
