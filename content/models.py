@@ -51,6 +51,26 @@ class Profile(models.Model):
         return f'{self.first_name} {self.last_initial}'
 
 
+class Picture(models.Model):
+
+    image = models.ImageField('image', upload_to='album_images', blank=False, null=False)
+    description = models.TextField(default='', blank=True, null=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'Picture {self.id}'
+
+
+class Album(models.Model):
+
+    title = models.CharField(max_length=30, blank=False, null=False)
+    pictures = models.ManyToManyField(Picture, blank=False)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.title}'
+
+
 class JoinDescription(models.Model):
 
     description = models.TextField(default='', blank=False, null=False)

@@ -5,7 +5,7 @@ from django.contrib import admin
 
 from ckeditor.widgets import CKEditorWidget
 
-from .models import About, News, Profile, JoinDescription
+from .models import About, News, Profile, Picture, Album, JoinDescription
 
 
 class AboutForm(forms.ModelForm):
@@ -69,6 +69,23 @@ class ProfileForm(forms.ModelForm):
 class ProfileAdmin(admin.ModelAdmin):
 
     form = ProfileForm
+
+
+@admin.register(Picture)
+class PictureAdmin(admin.ModelAdmin):
+
+    model = Picture
+
+
+class PicturesInline(admin.TabularInline):
+    model = Album.pictures.through
+
+
+@admin.register(Album)
+class AlbumAdmin(admin.ModelAdmin):
+
+    inlines = [PicturesInline, ]
+    exclude = ['pictures', ]
 
 
 class JoinDescriptionForm(forms.ModelForm):
