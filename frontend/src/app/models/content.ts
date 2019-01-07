@@ -25,3 +25,15 @@ export class Profile {
   coach: boolean;
   admin: boolean;
 }
+
+export class Picture {
+  url: string;
+  description: string;
+}
+
+export class Album {
+  id: number;
+  title: string;
+  cover: string;
+  pictures: Picture[];
+}

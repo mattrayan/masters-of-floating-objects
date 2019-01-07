@@ -3,9 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import * as $ from 'jquery';
 
-import { NewsService } from '../../services/news.service';
+import { ContentService } from '../../services/content.service';
 
-import { Album, Picture } from '../../models/news';
+import { Album, Picture } from '../../models/content';
 
 @Component({
   selector: 'app-album',
@@ -15,13 +15,12 @@ import { Album, Picture } from '../../models/news';
 export class AlbumComponent implements OnInit {
 
   public album: Album;
-  public pictures: Picture[];
   public activeId: string = '0';
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private ngbCarouselConfig: NgbCarouselConfig,
-    private news: NewsService
+    private content: ContentService
   ) {
     this.ngbCarouselConfig.interval = 0;
   }
@@ -59,8 +58,8 @@ export class AlbumComponent implements OnInit {
   }
 
   public getAlbum(id: number): void {
-    this.album = this.news.getAlbum(id);
-    this.pictures = this.news.getAlbumPictures(id);
+    this.content.getAlbum(id)
+      .subscribe((response: Album) => this.album = response);
   }
 
   public startCarousel(id: number): void {

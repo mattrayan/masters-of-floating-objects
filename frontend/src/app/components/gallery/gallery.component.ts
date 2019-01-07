@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
-import { NewsService } from '../../services/news.service';
+import { ContentService } from '../../services/content.service';
 
-import { Album } from '../../models/news';
+import { Album } from '../../models/content';
 
 @Component({
   selector: 'app-gallery',
@@ -14,7 +14,7 @@ export class GalleryComponent implements OnInit {
 
   public albums: Album[];
 
-  constructor(private news: NewsService) { }
+  constructor(private content: ContentService) { }
 
   ngOnInit() {
     $(document).ready(() => {
@@ -38,8 +38,8 @@ export class GalleryComponent implements OnInit {
   }
 
   public getAlbums(): void {
-    this.albums = this.news.getAlbums();
-    console.log(this.albums);
+    this.content.getAlbums()
+      .subscribe((response: Album[]) => this.albums = response);
   }
 
 }

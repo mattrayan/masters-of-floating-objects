@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 
-import { About, News, Profile, JoinDescription } from '../models/content';
+import { About, News, Profile, Album, JoinDescription } from '../models/content';
 
 const ABOUT_URL: string = '/api/about/';
 const NEWS_URL: string = '/api/news';
 const PROFILES_URL: string = '/api/profiles';
+const ALBUMS_URL: string = '/api/albums';
 const JOIN_DESCRIPTION_URL: string = '/api/join-description/';
 
 @Injectable()
@@ -32,6 +33,16 @@ export class ContentService {
   public getProfiles(alumni?: boolean): Observable<Profile[]> {
     return this.http.get(`${PROFILES_URL}/${alumni ? '?alumni=true' : ''}`)
       .map((results: Profile[]) => results);
+  }
+
+  public getAlbums(): Observable<Album[]> {
+    return this.http.get(ALBUMS_URL)
+      .map((results: Album[]) => results);
+  }
+
+  public getAlbum(id: number): Observable<Album> {
+    return this.http.get(`${ALBUMS_URL}/${id}`)
+      .map((results: Album) => results);
   }
 
   public getJoinDescription(): Observable<string> {
