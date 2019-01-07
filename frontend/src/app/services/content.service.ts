@@ -5,8 +5,8 @@ import { Observable } from 'rxjs/Rx';
 import { About, News, Profile, JoinDescription } from '../models/content';
 
 const ABOUT_URL: string = '/api/about/';
-const NEWS_URL: string = '/api/news/';
-const PROFILES_URL: string = '/api/profiles/';
+const NEWS_URL: string = '/api/news';
+const PROFILES_URL: string = '/api/profiles';
 const JOIN_DESCRIPTION_URL: string = '/api/join-description/';
 
 @Injectable()
