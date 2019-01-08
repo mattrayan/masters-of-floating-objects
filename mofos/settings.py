@@ -91,8 +91,8 @@ WSGI_APPLICATION = 'mofos.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mofos',
-        'USER': 'root',
+        'NAME': os.environ.get('MYSQL_DB_NAME', ''),
+        'USER': os.environ.get('MYSQL_DB_USER', ''),
         'PASSWORD': os.environ.get('MYSQL_DB_PASSWORD', ''),
         'HOST': '127.0.0.1',
         'PORT': '3306',
