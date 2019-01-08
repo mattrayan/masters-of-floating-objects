@@ -4,7 +4,6 @@ import * as $ from 'jquery';
 
 import { ContactService } from '../../services/contact.service';
 import { ContentService } from '../../services/content.service';
-import { NewsService } from '../../services/news.service';
 
 import { Message } from '../../models/contact';
 import { News } from '../../models/content';
