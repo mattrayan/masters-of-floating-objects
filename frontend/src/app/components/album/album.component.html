@@ -1,4 +1,4 @@
-<div class="content-page-container">
+<div class="content-page-container" (window:resize)="setCarouselDimensions()">
   <div *ngIf="album" class="container-fluid content-block">
     <div class="content-title margin-bottom-45">{{ album.title }}</div>
 

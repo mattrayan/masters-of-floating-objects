@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import * as $ from 'jquery';
 
@@ -13,7 +13,7 @@ import { News } from '../../models/content';
   templateUrl: './home.component.html',
   styleUrls: [ './home.component.scss' ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
 
   public about: string = '';
   public news: News[] = [];
@@ -26,14 +26,6 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    $(document).ready(() => {
-      this.setSplashHeight();
-
-      $(window).resize(() => {
-        this.setSplashHeight();
-      });
-    });
-
     const initObservables: Observable<any>[] = [
       this.content.getAbout(),
       this.content.getNews()
@@ -44,6 +36,10 @@ export class HomeComponent implements OnInit {
         this.about = about;
         this.news = news;
       });
+  }
+
+  ngAfterViewInit() {
+    this.setSplashHeight();
   }
 
   public setSplashHeight(): void {

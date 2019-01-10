@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import * as $ from 'jquery';
@@ -12,7 +12,7 @@ import { Album, Picture } from '../../models/content';
   templateUrl: './album.component.html',
   styleUrls: [ './album.component.scss' ]
 })
-export class AlbumComponent implements OnInit {
+export class AlbumComponent implements OnInit, AfterViewInit {
 
   public album: Album;
   public activeId: string = '0';
@@ -34,14 +34,10 @@ export class AlbumComponent implements OnInit {
         this.getAlbum(id);
       }
     });
+  }
 
-    $(document).ready(() => {
-      this.setCarouselDimensions();
-
-      $(window).resize(() => {
-        this.setCarouselDimensions();
-      });
-    });
+  ngAfterViewInit() {
+    this.setCarouselDimensions();
   }
 
   public setCarouselDimensions(): void {
