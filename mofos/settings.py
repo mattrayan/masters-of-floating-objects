@@ -30,7 +30,8 @@ DEBUG = str_to_bool(os.environ.get('DJANGO_DEBUG_LEVEL', 'True'))
 
 ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL', '')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOST = os.environ.get('DJANGO_ALLOWED_HOST', '')
+ALLOWED_HOSTS = [ALLOWED_HOST]
 
 
 # Application definition
