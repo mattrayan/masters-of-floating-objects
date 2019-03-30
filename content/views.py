@@ -45,8 +45,8 @@ class ProfileViewSet(viewsets.ReadOnlyModelViewSet):
         if alumni:
             return self.queryset.filter(active=False)
         else:
-            captains = self.queryset.filter(captain=True)
-            coaches = self.queryset.filter(coach=True)
+            captains = self.queryset.filter(captain=True, active=True)
+            coaches = self.queryset.filter(coach=True, active=True)
             paddlers = self.queryset \
                         .filter(Q(active=True) | Q(admin=True)) \
                         .exclude(captain=True) \
