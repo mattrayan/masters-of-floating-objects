@@ -29,6 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '')
 DEBUG = str_to_bool(os.environ.get('DJANGO_DEBUG_LEVEL', 'True'))
 
 ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL', '')
+GOOGLE_SITE_VERIFICATION = os.environ.get('GOOGLE_SITE_VERIFICATION', '')
 
 ALLOWED_HOST = os.environ.get('DJANGO_ALLOWED_HOST', '')
 ALLOWED_HOSTS = [ALLOWED_HOST, 'mofosdragonboat.com']

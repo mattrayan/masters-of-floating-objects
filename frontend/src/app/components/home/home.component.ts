@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public about: string = '';
   public news: News[] = [];
   public message: Message = new Message;
-  public teamAge: number = (new Date()).getFullYear() - 2002;
 
   constructor(
     private contact: ContactService,

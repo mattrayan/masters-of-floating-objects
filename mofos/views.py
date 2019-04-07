@@ -35,4 +35,8 @@ def spa(request, pk=None):
         script_imports.append('<script type="text/javascript" src="' + MAIN_BUNDLE + '"></script>')
 
     return render(request, 'index.html',
-        context={'render_css': ''.join(style_imports), 'render_scripts': ''.join(script_imports)})
+        context={
+            'render_css': ''.join(style_imports),
+            'render_scripts': ''.join(script_imports),
+            'google_site_verification': settings.GOOGLE_SITE_VERIFICATION,
+        })
