@@ -32,7 +32,7 @@ ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL', '')
 GOOGLE_SITE_VERIFICATION = os.environ.get('GOOGLE_SITE_VERIFICATION', '')
 
 ALLOWED_HOST = os.environ.get('DJANGO_ALLOWED_HOST', '')
-ALLOWED_HOSTS = [ALLOWED_HOST, 'mofosdragonboat.com', 'mofosdb.com']
+ALLOWED_HOSTS = [ALLOWED_HOST, 'mofosdragonboat.com', 'www.mofosdb.com']
 
 
 # Application definition
